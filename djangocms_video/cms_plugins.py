@@ -4,8 +4,8 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
 from . import settings
-from forms import VideoForm
-from models import Video
+from .forms import VideoForm
+from .models import Video
 
 
 class VideoPlugin(CMSPluginBase):
