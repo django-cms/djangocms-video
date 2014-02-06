@@ -2,35 +2,40 @@
 import datetime
 from south.db import db
 from south.v2 import SchemaMigration
-from django.db import models
+from django.db import models, connection
 
 
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'Video'
-        db.create_table(u'djangocms_video_video', (
-            (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
-            ('movie', self.gf('django.db.models.fields.files.FileField')(max_length=100, null=True, blank=True)),
-            ('movie_url', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
-            ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
-            ('width', self.gf('django.db.models.fields.PositiveSmallIntegerField')()),
-            ('height', self.gf('django.db.models.fields.PositiveSmallIntegerField')()),
-            ('auto_play', self.gf('django.db.models.fields.BooleanField')(default=False)),
-            ('auto_hide', self.gf('django.db.models.fields.BooleanField')(default=False)),
-            ('fullscreen', self.gf('django.db.models.fields.BooleanField')(default=True)),
-            ('loop', self.gf('django.db.models.fields.BooleanField')(default=False)),
-            ('bgcolor', self.gf('django.db.models.fields.CharField')(default='000000', max_length=6)),
-            ('textcolor', self.gf('django.db.models.fields.CharField')(default='FFFFFF', max_length=6)),
-            ('seekbarcolor', self.gf('django.db.models.fields.CharField')(default='13ABEC', max_length=6)),
-            ('seekbarbgcolor', self.gf('django.db.models.fields.CharField')(default='333333', max_length=6)),
-            ('loadingbarcolor', self.gf('django.db.models.fields.CharField')(default='828282', max_length=6)),
-            ('buttonoutcolor', self.gf('django.db.models.fields.CharField')(default='333333', max_length=6)),
-            ('buttonovercolor', self.gf('django.db.models.fields.CharField')(default='000000', max_length=6)),
-            ('buttonhighlightcolor', self.gf('django.db.models.fields.CharField')(default='FFFFFF', max_length=6)),
-        ))
-        db.send_create_signal(u'djangocms_video', ['Video'])
-
+        table_names = connection.introspection.table_names()
+        if 'cmsplugin_video' in table_names:
+            db.rename_table('cmsplugin_video', 'djangocms_video_video')
+        elif 'video_video' in table_names:
+            db.rename_table('video_video', 'djangocms_video_video')
+        else:
+            # Adding model 'Video'
+            db.create_table(u'djangocms_video_video', (
+                (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
+                ('movie', self.gf('django.db.models.fields.files.FileField')(max_length=100, null=True, blank=True)),
+                ('movie_url', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
+                ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
+                ('width', self.gf('django.db.models.fields.PositiveSmallIntegerField')()),
+                ('height', self.gf('django.db.models.fields.PositiveSmallIntegerField')()),
+                ('auto_play', self.gf('django.db.models.fields.BooleanField')(default=False)),
+                ('auto_hide', self.gf('django.db.models.fields.BooleanField')(default=False)),
+                ('fullscreen', self.gf('django.db.models.fields.BooleanField')(default=True)),
+                ('loop', self.gf('django.db.models.fields.BooleanField')(default=False)),
+                ('bgcolor', self.gf('django.db.models.fields.CharField')(default='000000', max_length=6)),
+                ('textcolor', self.gf('django.db.models.fields.CharField')(default='FFFFFF', max_length=6)),
+                ('seekbarcolor', self.gf('django.db.models.fields.CharField')(default='13ABEC', max_length=6)),
+                ('seekbarbgcolor', self.gf('django.db.models.fields.CharField')(default='333333', max_length=6)),
+                ('loadingbarcolor', self.gf('django.db.models.fields.CharField')(default='828282', max_length=6)),
+                ('buttonoutcolor', self.gf('django.db.models.fields.CharField')(default='333333', max_length=6)),
+                ('buttonovercolor', self.gf('django.db.models.fields.CharField')(default='000000', max_length=6)),
+                ('buttonhighlightcolor', self.gf('django.db.models.fields.CharField')(default='FFFFFF', max_length=6)),
+            ))
+            db.send_create_signal(u'djangocms_video', ['Video'])
 
     def backwards(self, orm):
         # Deleting model 'Video'
