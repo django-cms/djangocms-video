@@ -12,6 +12,7 @@ class VideoPlugin(CMSPluginBase):
     model = Video
     name = _("Video")
     form = VideoForm
+    text_enabled = True
     
     render_template = "cms/plugins/video.html"
     
