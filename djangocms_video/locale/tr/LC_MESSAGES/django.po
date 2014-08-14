@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-02-06 13:32+0000\n"
+"Last-Translator: Chive <kim@smuzey.ch>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/django-cms/language/tr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "Video"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "Renk Ayarları"
+
+#: models.py:16
+msgid "movie file"
+msgstr ""
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr ".flv dosyası veya h264 ile kodlanmış video dosyası"
+
+#: models.py:21
+msgid "movie url"
+msgstr ""
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "vimeo veya youtube video url'si. Örneğin: http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "resim"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "Resim dosyasını önizle"
+
+#: models.py:30
+msgid "width"
+msgstr "genişlik"
+
+#: models.py:32
+msgid "height"
+msgstr "yükseklik"
+
+#: models.py:35
+msgid "auto play"
+msgstr "otomatik oynat"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "otomatik gizle"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "tam ekran"
+
+#: models.py:43
+msgid "loop"
+msgstr "sürekli oynat"
+
+#: models.py:47
+msgid "background color"
+msgstr "background color"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "Onaltılık taban, örn ff00cc"
+
+#: models.py:51
+msgid "text color"
+msgstr "metin rengi"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr ""
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr ""
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "yükleme çubuğu rengi"
+
+#: models.py:69
+msgid "button out color"
+msgstr ""
+
+#: models.py:74
+msgid "button over color"
+msgstr "düğme üst rengi"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr ""
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "Flash eklentisi kayıp. Lütfen Adobe Flash Player'ın en son sürümünü indirin:"
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "Adobe Flash Player'ı indirin"

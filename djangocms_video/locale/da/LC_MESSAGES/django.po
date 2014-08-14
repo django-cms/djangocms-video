@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# valberg <valberg@orn.li>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-03-03 21:59+0000\n"
+"Last-Translator: valberg <valberg@orn.li>\n"
+"Language-Team: Danish (http://www.transifex.com/projects/p/django-cms/language/da/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "Video"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "Farveindstillinger"
+
+#: models.py:16
+msgid "movie file"
+msgstr "videofil"
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr "brug .flv eller h264 encodede video filer"
+
+#: models.py:21
+msgid "movie url"
+msgstr "video url"
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "vimeo eller youtube video adresse. Eks. http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "billede"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "forhåndsvisning af billedefil"
+
+#: models.py:30
+msgid "width"
+msgstr "bredde"
+
+#: models.py:32
+msgid "height"
+msgstr "højde"
+
+#: models.py:35
+msgid "auto play"
+msgstr "automatisk afspilning"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "skjul automatisk"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "fuldskærm"
+
+#: models.py:43
+msgid "loop"
+msgstr "løkke"
+
+#: models.py:47
+msgid "background color"
+msgstr "baggrundsfarve"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "Hexidecimal, f.eks. ff00cc"
+
+#: models.py:51
+msgid "text color"
+msgstr "tekstfarve"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr "søgebar farve"
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr "søgebar baggrundsfarve"
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "indlæsningsbar farve"
+
+#: models.py:69
+msgid "button out color"
+msgstr "knap ud farve"
+
+#: models.py:74
+msgid "button over color"
+msgstr "knap over farve"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr "knap fremhævelsesfarve"
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "Mangler flash plugin. Hent venligst den seneste Adobe Flash Player."
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "Hent Adobe Flash Player."

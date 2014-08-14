@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-02-06 13:32+0000\n"
+"Last-Translator: Chive <kim@smuzey.ch>\n"
+"Language-Team: Czech (http://www.transifex.com/projects/p/django-cms/language/cs/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "Video"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "Nastavení barev"
+
+#: models.py:16
+msgid "movie file"
+msgstr ""
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr "použijte .flv nebo video zakódované pomocí h264"
+
+#: models.py:21
+msgid "movie url"
+msgstr ""
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "Adrese na vimeo nebo youtube video. Příklad: http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "obrázek"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "náhled obrázku"
+
+#: models.py:30
+msgid "width"
+msgstr "šírka"
+
+#: models.py:32
+msgid "height"
+msgstr "výška"
+
+#: models.py:35
+msgid "auto play"
+msgstr "automatické přehrávání"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "automatické skrývání"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "Celoobrazovkový režim"
+
+#: models.py:43
+msgid "loop"
+msgstr "nekonečná smyčka"
+
+#: models.py:47
+msgid "background color"
+msgstr "barva pozadí"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "Hexadecimálně, např. fff000"
+
+#: models.py:51
+msgid "text color"
+msgstr "barva textu"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr "seekbar barva"
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr "seekbar podkladová barva"
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "barva loadingbaru"
+
+#: models.py:69
+msgid "button out color"
+msgstr "barva tlačítka při jeho opuštění"
+
+#: models.py:74
+msgid "button over color"
+msgstr "barva tlačítka při přejetí"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr "barva zvýrazněného tlačítka"
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "Chybí zásuvný modul pro Flash. Prosím, stáhněte si nejnovější Adobe Flash Player:"
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "Získat Adobe Flash Player"

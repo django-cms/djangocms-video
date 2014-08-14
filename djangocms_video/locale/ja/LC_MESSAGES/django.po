@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-02-06 13:32+0000\n"
+"Last-Translator: Chive <kim@smuzey.ch>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/django-cms/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "動画"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "色設定"
+
+#: models.py:16
+msgid "movie file"
+msgstr "動画ファイル"
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr "FLV ファイルか、 H264 エンコードされた動画ファイルを使ってください。"
+
+#: models.py:21
+msgid "movie url"
+msgstr "動画のURL"
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "vimeo または youtube の動画URLです。 例: http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "絵"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "プレビュー画像"
+
+#: models.py:30
+msgid "width"
+msgstr "幅"
+
+#: models.py:32
+msgid "height"
+msgstr "高さ"
+
+#: models.py:35
+msgid "auto play"
+msgstr "自動的に再生する"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "自動的に隠す"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "全画面表示にする"
+
+#: models.py:43
+msgid "loop"
+msgstr "ループ再生する"
+
+#: models.py:47
+msgid "background color"
+msgstr "背景色"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "”ff00cc” のような16進表記です。"
+
+#: models.py:51
+msgid "text color"
+msgstr "テキストの色"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr "検索バーの色"
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr "検索バーの背景色"
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "読み込みバーの色"
+
+#: models.py:69
+msgid "button out color"
+msgstr "ボタンの色"
+
+#: models.py:74
+msgid "button over color"
+msgstr "ボタンのマウスオーバー時の色"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr "ボタンのハイライト色"
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "Flashプラグインがありません。最新のAdobe Flash Playerをダウンロードしてください:"
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "Get Adobe Flash Player"

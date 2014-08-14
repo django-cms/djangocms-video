@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-02-06 13:32+0000\n"
+"Last-Translator: Chive <kim@smuzey.ch>\n"
+"Language-Team: Welsh (http://www.transifex.com/projects/p/django-cms/language/cy/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cy\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr ""
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr ""
+
+#: models.py:16
+msgid "movie file"
+msgstr ""
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr ""
+
+#: models.py:21
+msgid "movie url"
+msgstr ""
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr ""
+
+#: models.py:27
+msgid "image"
+msgstr ""
+
+#: models.py:28
+msgid "preview image file"
+msgstr ""
+
+#: models.py:30
+msgid "width"
+msgstr ""
+
+#: models.py:32
+msgid "height"
+msgstr ""
+
+#: models.py:35
+msgid "auto play"
+msgstr ""
+
+#: models.py:38
+msgid "auto hide"
+msgstr ""
+
+#: models.py:41
+msgid "fullscreen"
+msgstr ""
+
+#: models.py:43
+msgid "loop"
+msgstr ""
+
+#: models.py:47
+msgid "background color"
+msgstr "background color"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr ""
+
+#: models.py:51
+msgid "text color"
+msgstr ""
+
+#: models.py:55
+msgid "seekbar color"
+msgstr ""
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr ""
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr ""
+
+#: models.py:69
+msgid "button out color"
+msgstr ""
+
+#: models.py:74
+msgid "button over color"
+msgstr ""
+
+#: models.py:79
+msgid "button highlight color"
+msgstr ""
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr ""
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr ""

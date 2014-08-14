@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-02-06 13:32+0000\n"
+"Last-Translator: Chive <kim@smuzey.ch>\n"
+"Language-Team: Norwegian (http://www.transifex.com/projects/p/django-cms/language/no/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: no\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "Video"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "Fargeinnstillinger"
+
+#: models.py:16
+msgid "movie file"
+msgstr ""
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr "bruk .flv-fil eller h264-kodet videofil"
+
+#: models.py:21
+msgid "movie url"
+msgstr ""
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "Vimeo- eller YouTube-videoadresse. Eksempel: http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "bilde"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "bilde for forhåndsvisning"
+
+#: models.py:30
+msgid "width"
+msgstr "bredde"
+
+#: models.py:32
+msgid "height"
+msgstr "høyde"
+
+#: models.py:35
+msgid "auto play"
+msgstr "spill av automatisk"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "skjul automatisk"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "fullskjerm"
+
+#: models.py:43
+msgid "loop"
+msgstr "loop"
+
+#: models.py:47
+msgid "background color"
+msgstr "bakgrunnsfarge"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "Heksadesimal, f.eks. ff00cc"
+
+#: models.py:51
+msgid "text color"
+msgstr "tekstfarge"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr "søkelinje-farge"
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr "søkelinje-bakgrunnsfarge"
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "lastelinje-farge"
+
+#: models.py:69
+msgid "button out color"
+msgstr "farge for ut av knapp"
+
+#: models.py:74
+msgid "button over color"
+msgstr "farge for over knapp"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr "markeringsfarge for knapp"
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "Manglende utvidelse for Flash. Vennligst last ned siste Adobe Flash Player:"
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "Last ned Adobe Flash Player"

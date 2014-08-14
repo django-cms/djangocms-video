@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Patrick Lauber <patrick.lauber@divio.ch>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-02-06 14:01+0000\n"
+"Last-Translator: Patrick Lauber <patrick.lauber@divio.ch>\n"
+"Language-Team: German (http://www.transifex.com/projects/p/django-cms/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "Video"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "Farb-Einstellungen"
+
+#: models.py:16
+msgid "movie file"
+msgstr "Filmdatei"
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr "Benutzen sie .flv oder mittels H264 enkodierte Video Dateien."
+
+#: models.py:21
+msgid "movie url"
+msgstr "Film URL"
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "Vimeo- oder Youtube-Video-URL. Beispiel: http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "Bild"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "Bild Datei Vorschau"
+
+#: models.py:30
+msgid "width"
+msgstr "Breite"
+
+#: models.py:32
+msgid "height"
+msgstr "Höhe"
+
+#: models.py:35
+msgid "auto play"
+msgstr "automatisch starten"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "automatisch ausblenden"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "Vollbild"
+
+#: models.py:43
+msgid "loop"
+msgstr "wiederholen"
+
+#: models.py:47
+msgid "background color"
+msgstr "Rechte Spalte"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "Hexadezimal, z.B. ff00cc"
+
+#: models.py:51
+msgid "text color"
+msgstr "Textfarbe"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr "Suchbar-Farbe"
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr "Suchbar-Hintergrundfarbe"
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "Ladebalken-Farbe"
+
+#: models.py:69
+msgid "button out color"
+msgstr "Schalter Mouseout-Farbe"
+
+#: models.py:74
+msgid "button over color"
+msgstr "Schalter Mouseover-Farbe"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr "Schalter Highlight-Farbe"
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "Flash Plugin nicht gefunden. Bitte laden Sie sich den neusten Adobe Flash Player herunter."
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "Adobe Flash Player herunterladen"

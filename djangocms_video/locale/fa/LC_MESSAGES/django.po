@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# hamitreza <hamitreza@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-05-29 20:11+0000\n"
+"Last-Translator: hamitreza <hamitreza@gmail.com>\n"
+"Language-Team: Persian (http://www.transifex.com/projects/p/django-cms/language/fa/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "ویدیو"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "تنظیمات رنگ"
+
+#: models.py:16
+msgid "movie file"
+msgstr "فایل ویدیو"
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr "از نوع .flv یا کدگذاری  h264 استفاده کنید"
+
+#: models.py:21
+msgid "movie url"
+msgstr "آدرس اینترنتی ویدیو"
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "آدرس ويدئو از vimeo يا youtube . براى مثال:  http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "تصویر"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "پیش‌نمایش تصویر"
+
+#: models.py:30
+msgid "width"
+msgstr "عرض"
+
+#: models.py:32
+msgid "height"
+msgstr "ارتفاع"
+
+#: models.py:35
+msgid "auto play"
+msgstr "نمایش خودکار"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "پنهان‌سازی خودکار"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "تمام‌صفحه"
+
+#: models.py:43
+msgid "loop"
+msgstr "نمایش دوباره"
+
+#: models.py:47
+msgid "background color"
+msgstr "رنگ زمینه seekbar"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "هگزادسیمال مانند ff00cc"
+
+#: models.py:51
+msgid "text color"
+msgstr "رنگ متن"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr "رنگ نوار پیگرد"
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr "رنگ پس زمینه نوار پیگرد"
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "رنگ نوار بارگذاری"
+
+#: models.py:69
+msgid "button out color"
+msgstr "رنگ button out"
+
+#: models.py:74
+msgid "button over color"
+msgstr "رنگ button over"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr "رنگ button highlight"
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "پلاگین فلش موجود نیست. لطفا فلش پلیر را دانلود نمایید."
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "دریافت فلش پلیر"

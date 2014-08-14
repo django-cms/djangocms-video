@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Bashar Al-Abdulhadi, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-03-03 18:20+0000\n"
+"Last-Translator: Bashar Al-Abdulhadi\n"
+"Language-Team: Arabic (http://www.transifex.com/projects/p/django-cms/language/ar/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "فيديو"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "إعدادات الألوان"
+
+#: models.py:16
+msgid "movie file"
+msgstr "ملف الفيديو"
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr "استخدم ملفات .flv أو ملف فيديو منمط بـ h264"
+
+#: models.py:21
+msgid "movie url"
+msgstr "رابط الفيديو"
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "رابط فيديو على فيميو أو يوتيوب. مثال: http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "صورة"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "عرض الصورة"
+
+#: models.py:30
+msgid "width"
+msgstr "العرض"
+
+#: models.py:32
+msgid "height"
+msgstr "الطول"
+
+#: models.py:35
+msgid "auto play"
+msgstr "تشغيل تلقائي"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "إخفاء تلقائي"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "ملئ الشاشة"
+
+#: models.py:43
+msgid "loop"
+msgstr "إعاد التشغيل عند الإنتهاء"
+
+#: models.py:47
+msgid "background color"
+msgstr "لون خلفية شريط التنقل"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "بنمط ستا عشري، أي ff00cc"
+
+#: models.py:51
+msgid "text color"
+msgstr "لون النص"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr "لون شريط تشغيل الفيديو"
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr "لون خلفية شريط تشغيل الفيديو"
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "لون شريط التحميل"
+
+#: models.py:69
+msgid "button out color"
+msgstr "اللون الخارجي للزر"
+
+#: models.py:74
+msgid "button over color"
+msgstr "اللون الأعلى للزر"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr "لون التحديد للزر"
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "لم يتم العثور على مشغل فلاش. من فضلك قم بتحميل آخر إصدار من مشغل فلاش أدوبي:"
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "احصل على مشغل فلاش أدوبي"

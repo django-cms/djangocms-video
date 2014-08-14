@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# ar4s <arkadiusz.adamski@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-05-25 21:42+0000\n"
+"Last-Translator: ar4s <arkadiusz.adamski@gmail.com>\n"
+"Language-Team: Polish (http://www.transifex.com/projects/p/django-cms/language/pl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "Wideo"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "Ustawienia kolorów"
+
+#: models.py:16
+msgid "movie file"
+msgstr "plik filmowy"
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr "użyj pliku video w formacie flv lub h264"
+
+#: models.py:21
+msgid "movie url"
+msgstr "url filmu"
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "Adres URL do klipu wideo z Vimeo lub YouTube. Przykład: http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "obrazek"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "podgląd obrazka"
+
+#: models.py:30
+msgid "width"
+msgstr "szerokość"
+
+#: models.py:32
+msgid "height"
+msgstr "wysokość"
+
+#: models.py:35
+msgid "auto play"
+msgstr "auto odtwarzanie"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "auto ukrywanie"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "pełny ekran"
+
+#: models.py:43
+msgid "loop"
+msgstr "w pętli"
+
+#: models.py:47
+msgid "background color"
+msgstr "background color"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "Szesnastkowy, np. ff00cc"
+
+#: models.py:51
+msgid "text color"
+msgstr "kolor tekstu"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr ""
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr ""
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "kolor paska ładownia filmu"
+
+#: models.py:69
+msgid "button out color"
+msgstr "kolor przycisku"
+
+#: models.py:74
+msgid "button over color"
+msgstr "kolor przycisku (przy najechaniu kursorem)"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr "kolor zaznaczonego przycisku"
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "Brak wtyczki Flash. Pobierz najnowszą wersję Adobe Flash Player: "
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "Zdobądź Adobe Flash Player"

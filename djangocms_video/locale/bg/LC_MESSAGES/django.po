@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-02-06 13:32+0000\n"
+"Last-Translator: Chive <kim@smuzey.ch>\n"
+"Language-Team: Bulgarian (http://www.transifex.com/projects/p/django-cms/language/bg/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cms_plugins.py:13
+msgid "Video"
+msgstr "Видео"
+
+#: cms_plugins.py:45
+msgid "Color Settings"
+msgstr "Настройки на цвят"
+
+#: models.py:16
+msgid "movie file"
+msgstr ""
+
+#: models.py:17
+msgid "use .flv file or h264 encoded video file"
+msgstr "използвайте видео файлове във формат .FLV или видео файл кодиран в h264 формат"
+
+#: models.py:21
+msgid "movie url"
+msgstr ""
+
+#: models.py:22
+msgid ""
+"vimeo or youtube video url. Example: "
+"http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+msgstr "адрес на видео във Vimeo или  YouTube, например http://www.youtube.com/watch?v=-iJ7bs4mTUY"
+
+#: models.py:27
+msgid "image"
+msgstr "картинка"
+
+#: models.py:28
+msgid "preview image file"
+msgstr "преглед на файл с изображение"
+
+#: models.py:30
+msgid "width"
+msgstr "широчина"
+
+#: models.py:32
+msgid "height"
+msgstr "височина"
+
+#: models.py:35
+msgid "auto play"
+msgstr "автоматично започване"
+
+#: models.py:38
+msgid "auto hide"
+msgstr "скрий автоматично"
+
+#: models.py:41
+msgid "fullscreen"
+msgstr "на цял екран"
+
+#: models.py:43
+msgid "loop"
+msgstr "циклично"
+
+#: models.py:47
+msgid "background color"
+msgstr "background color"
+
+#: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
+#: models.py:71 models.py:76 models.py:81
+msgid "Hexadecimal, eg ff00cc"
+msgstr "Шестнадесетично представяне, например FF00CC"
+
+#: models.py:51
+msgid "text color"
+msgstr "цвят на текста"
+
+#: models.py:55
+msgid "seekbar color"
+msgstr ""
+
+#: models.py:59
+msgid "seekbar bg color"
+msgstr ""
+
+#: models.py:64
+msgid "loadingbar color"
+msgstr "цвят на индикатора за зареждане"
+
+#: models.py:69
+msgid "button out color"
+msgstr "цвят на бутона"
+
+#: models.py:74
+msgid "button over color"
+msgstr "цвят на бутона при преминаване на мишката"
+
+#: models.py:79
+msgid "button highlight color"
+msgstr "цвят на бутона при активен бутон"
+
+#: templates/cms/plugins/video.html:60
+msgid "Missing flash plugin. Please download the latest Adobe Flash Player: "
+msgstr "Липсваща добавка. Моля, изтеглете последната версия на Adobe Flash Player"
+
+#: templates/cms/plugins/video.html:62
+msgid "Get Adobe Flash Player"
+msgstr "Изтеглете Adobe Flash Player"
