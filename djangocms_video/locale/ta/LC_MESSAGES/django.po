@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# L.Desigan <desiganlitchmonan@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: django-cms\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-06 14:10+0100\n"
-"PO-Revision-Date: 2014-02-06 13:17+0000\n"
-"Last-Translator: Chive <kim@smuzey.ch>\n"
+"PO-Revision-Date: 2014-09-14 00:40+0000\n"
+"Last-Translator: L.Desigan <desiganlitchmonan@gmail.com>\n"
 "Language-Team: Tamil (http://www.transifex.com/projects/p/django-cms/language/ta/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,23 +20,23 @@ msgstr ""
 
 #: cms_plugins.py:13
 msgid "Video"
-msgstr ""
+msgstr "காணொளி"
 
 #: cms_plugins.py:45
 msgid "Color Settings"
-msgstr ""
+msgstr "நிற அமைப்பு"
 
 #: models.py:16
 msgid "movie file"
-msgstr ""
+msgstr "திரைப்பட கோப்பு"
 
 #: models.py:17
 msgid "use .flv file or h264 encoded video file"
-msgstr ""
+msgstr ".flv அல்லது h264 குறியாக்க வீடியோ கோப்பை பயன்படுத்தவும்"
 
 #: models.py:21
 msgid "movie url"
-msgstr ""
+msgstr "திரைப்பட url"
 
 #: models.py:22
 msgid ""
@@ -45,7 +46,7 @@ msgstr ""
 
 #: models.py:27
 msgid "image"
-msgstr ""
+msgstr "படம்"
 
 #: models.py:28
 msgid "preview image file"
@@ -53,23 +54,23 @@ msgstr ""
 
 #: models.py:30
 msgid "width"
-msgstr ""
+msgstr "அகலம்"
 
 #: models.py:32
 msgid "height"
-msgstr ""
+msgstr "உயரம்"
 
 #: models.py:35
 msgid "auto play"
-msgstr ""
+msgstr "தானியங்கி"
 
 #: models.py:38
 msgid "auto hide"
-msgstr ""
+msgstr "தன்னியக்க மறைவு"
 
 #: models.py:41
 msgid "fullscreen"
-msgstr ""
+msgstr "முழுத்திரை"
 
 #: models.py:43
 msgid "loop"
@@ -77,7 +78,7 @@ msgstr ""
 
 #: models.py:47
 msgid "background color"
-msgstr ""
+msgstr "பின்புல நிறம்"
 
 #: models.py:48 models.py:52 models.py:56 models.py:61 models.py:66
 #: models.py:71 models.py:76 models.py:81
@@ -86,7 +87,7 @@ msgstr ""
 
 #: models.py:51
 msgid "text color"
-msgstr ""
+msgstr "எழுத்துரு நிறம்"
 
 #: models.py:55
 msgid "seekbar color"
