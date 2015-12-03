@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_base import CMSPluginBase
@@ -13,9 +15,9 @@ class VideoPlugin(CMSPluginBase):
     name = _("Video")
     form = VideoForm
     text_enabled = True
-    
+
     render_template = "cms/plugins/video.html"
-    
+
     general_fields = [
         ('movie', 'movie_url'),
         'image',
@@ -35,7 +37,7 @@ class VideoPlugin(CMSPluginBase):
         'buttonovercolor',
         'buttonhighlightcolor',
     ]
-    
+
     fieldsets = [
         (None, {
             'fields': general_fields,
@@ -48,7 +50,7 @@ class VideoPlugin(CMSPluginBase):
                 'classes': ('collapse',),
             }),
         ]
-        
+
     def render(self, context, instance, placeholder):
         context.update({
             'object': instance,
