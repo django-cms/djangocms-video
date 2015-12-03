@@ -25,7 +25,11 @@ setup(
     author='Divio AG',
     author_email='info@divio.ch',
     url='https://github.com/divio/djangocms-video',
-    packages=['djangocms_video', 'djangocms_video.migrations', 'djangocms_video.migrations_django'],
+    packages=[
+        'djangocms_video',
+        'djangocms_video.migrations',
+        'djangocms_video.south_migrations'
+    ],
     license='LICENSE.txt',
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
