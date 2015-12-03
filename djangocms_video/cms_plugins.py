@@ -57,5 +57,5 @@ class VideoPlugin(CMSPluginBase):
             'placeholder': placeholder,
         })
         return context
-    
+
 plugin_pool.register_plugin(VideoPlugin)

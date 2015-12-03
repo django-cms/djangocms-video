@@ -37,7 +37,7 @@ ROOT_URLCONF = 'cms.urls'
 
 def schemamigration():
     # turn ``schemamigration.py --initial`` into
-    # ``manage.py schemamigration cmsplugin_disqus --initial`` and setup the 
+    # ``manage.py schemamigration cmsplugin_disqus --initial`` and setup the
     # enviroment
 
     from django.conf import settings
