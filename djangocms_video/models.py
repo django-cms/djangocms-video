@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 
 from django.db import models
@@ -9,7 +11,8 @@ try:
 except ImportError:
     def get_plugin_media_path(instance, filename):
         """
-        See cms.models.pluginmodel.get_plugin_media_path on django CMS 3.0.4+ for information
+        See cms.models.pluginmodel.get_plugin_media_path on django CMS 3.0.4+
+        for information
         """
         return instance.get_media_path(filename)
 from cms.utils.compat.dj import python_2_unicode_compatible
@@ -34,11 +37,11 @@ class Video(CMSPlugin):
     image = models.ImageField(
         _('image'), upload_to=get_plugin_media_path,
         help_text=_('preview image file'), null=True, blank=True)
-    
+
     width = models.PositiveSmallIntegerField(_('width'))
 
     height = models.PositiveSmallIntegerField(_('height'))
-    
+
     auto_play = models.BooleanField(
         _('auto play'), default=settings.VIDEO_AUTOPLAY)
 
@@ -49,7 +52,7 @@ class Video(CMSPlugin):
         _('fullscreen'), default=settings.VIDEO_FULLSCREEN)
 
     loop = models.BooleanField(_('loop'), default=settings.VIDEO_LOOP)
-    
+
     # plugin settings
     bgcolor = models.CharField(
         _('background color'), max_length=6, default=settings.VIDEO_BG_COLOR,
@@ -97,13 +100,12 @@ class Video(CMSPlugin):
 
     def get_height(self):
         return "%s" % self.height
-    
+
     def get_width(self):
         return "%s" % self.width
-    
+
     def get_movie(self):
         if self.movie:
             return self.movie.url
         else:
             return self.movie_url
-
