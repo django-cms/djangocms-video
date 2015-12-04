@@ -2,3 +2,6 @@
 *.pot
 *.pyc
 local_settings.py
+build
+dist
+djangocms_video.egg-info
