@@ -93,7 +93,7 @@ class Video(CMSPlugin):
 
     def __str__(self):
         if self.movie:
-            name = self.movie.path
+            name = self.movie.url
         else:
             name = self.movie_url
         return u"%s" % os.path.basename(name)
