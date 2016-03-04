@@ -22,6 +22,13 @@ from . import settings
 
 @python_2_unicode_compatible
 class Video(CMSPlugin):
+    # Add an app namespace to related_name to avoid field name clashes
+    # with any other plugins that have a field with the same name as the
+    # lowercase of the class name of this model.
+    # https://github.com/divio/django-cms/issues/5030
+    cmsplugin_ptr = models.OneToOneField(
+        CMSPlugin, related_name='djangocms_video_video', parent_link=True)
+
     # player settings
     movie = models.FileField(
         _('movie file'), upload_to=get_plugin_media_path,
