@@ -16,7 +16,7 @@ class VideoPlugin(CMSPluginBase):
     form = VideoForm
     text_enabled = True
 
-    render_template = "cms/plugins/video.html"
+    render_template = "djangocms_video/video.html"
 
     general_fields = [
         ('movie', 'movie_url'),
