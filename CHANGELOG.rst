@@ -6,6 +6,9 @@ Changelog
 1.1.0 (unreleased)
 ==================
 
+* Adapted README
+* Added several config files for codecov, editorconfig and more
+* Added a simple test case
 * Added missing ``swfobject.min.js``
 * Added missing ``player.swf``
 * Added missing ``expressInstall.swf``
