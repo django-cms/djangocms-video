@@ -7,7 +7,6 @@ from djangocms_video import __version__
 
 REQUIREMENTS = [
     'django-cms>=3.3.1',
-    'djangocms-attributes-field>=0.1.1',
 ]
 
 
