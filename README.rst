@@ -13,8 +13,6 @@ This addon is compatible with `Aldryn <http://aldryn.com>`_ and is also availabl
 `django CMS Marketplace <https://marketplace.django-cms.org/en/addons/browse/djangocms-video/>`_
 for easy installation.
 
-.. image:: preview.gif
-
 
 Contributing
 ============
