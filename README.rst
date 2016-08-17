@@ -36,7 +36,7 @@ See ``REQUIREMENTS`` in the `setup.py <https://github.com/divio/djangocms-video/
 file for additional dependencies:
 
 * Python 2.7, 3.3 or higher
-* Django 1.8 or higher
+* Django 1.6 or higher
 
 
 Installation

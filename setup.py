@@ -6,7 +6,7 @@ from djangocms_video import __version__
 
 
 REQUIREMENTS = [
-    'django-cms>=3.3.1',
+    'django-cms>=3.0',
 ]
 
 
