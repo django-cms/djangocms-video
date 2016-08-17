@@ -1,24 +1,27 @@
 language: python
 
-# Use container based infrastructure
 sudo: false
 
 env:
-  matrix:
-    - TOXENV=flake8
-
-cache:
-  directories:
-    - $HOME/.wheelhouse
+  - TOX_ENV=flake8
+  - TOX_ENV=py27-latest
+  - TOX_ENV=py34-latest
+  # Django 1.8
+  - TOX_ENV=py34-dj18-cms33
+  - TOX_ENV=py34-dj18-cms32
+  - TOX_ENV=py27-dj18-cms33
+  - TOX_ENV=py27-dj18-cms32
+  # Django 1.9
+  - TOX_ENV=py34-dj19-cms33
+  - TOX_ENV=py34-dj19-cms32
+  - TOX_ENV=py27-dj19-cms33
+  - TOX_ENV=py27-dj19-cms32
 
 install:
-  - pip install tox
-  - pip install coveralls
+  - pip install tox coverage
 
 script:
-  - tox -e $TOXENV
+  - tox -e $TOX_ENV
 
-after_success: coveralls
-
-notifications:
-  webhooks: http://addons.us-iad-rs.aldryn.io/en/travis-endpoint/
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
