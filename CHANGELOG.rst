@@ -14,7 +14,7 @@ Changelog
 * Adapted files to resemble best practices
 
 
-1.1.0 (unreleased)
+1.1.0 (2016-25-08)
 ==================
 
 * Adapted README
