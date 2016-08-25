@@ -3,6 +3,17 @@ Changelog
 =========
 
 
+2.0.0 (unreleased)
+==================
+* Dropped flash support
+* Dropped django CMS <3.3.1 support
+* Dropped Django <1.8 support
+* Renamed Video to VideoPlayer
+* Added Video Source Plugin
+* Added Video Track Plugin
+* Adapted files to resemble best practices
+
+
 1.1.0 (unreleased)
 ==================
 

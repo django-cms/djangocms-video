@@ -9,9 +9,13 @@ django CMS Video
 that allow you to publish video content on your site (using an HTML5 player by default,
 but you can override this in your own templates if required).
 
+It uses files managed by `Django Filer <https://github.com/divio/django-filer>`_.
+
 This addon is compatible with `Aldryn <http://aldryn.com>`_ and is also available on the
 `django CMS Marketplace <https://marketplace.django-cms.org/en/addons/browse/djangocms-video/>`_
 for easy installation.
+
+.. image:: preview.gif
 
 
 Contributing
@@ -34,7 +38,7 @@ See ``REQUIREMENTS`` in the `setup.py <https://github.com/divio/djangocms-video/
 file for additional dependencies:
 
 * Python 2.7, 3.3 or higher
-* Django 1.6 or higher
+* Django 1.8 or higher
 
 
 Installation
@@ -52,6 +56,25 @@ Configuration
 
 Note that the provided templates are very minimal by design. You are encouraged
 to adapt and override them to your project's requirements.
+
+This addon provides a ``default`` template for all instances. You can provide
+additional template choices by adding a ``DJANGOCMS_VIDEO_TEMPLATES``
+setting::
+
+    DJANGOCMS_VIDEO_TEMPLATES = [
+        ('feature', _('Featured Version')),
+    ]
+
+You'll need to create the `feature` folder inside ``templates/djangocms_video/``
+otherwise you will get a *template does not exist* error. You can do this by
+copying the ``default`` folder inside that directory and renaming it to
+``feature``.
+
+``MP4``, ``WEBM`` and ``OGV`` files are allowed by default. We recommend
+adding all 3 source files for full browser compatibility. You can change
+the default setting by overriding::
+
+    DJANGOCMS_VIDEO_ALLOWED_EXTENSIONS = ['mp4', 'webm', 'ogv']
 
 
 Running Tests
