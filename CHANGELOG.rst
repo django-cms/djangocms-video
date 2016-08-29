@@ -5,6 +5,7 @@ Changelog
 
 2.0.0 (2016-29-08)
 ==================
+
 * Dropped flash support
 * Dropped django CMS <3.3.1 support
 * Dropped Django <1.8 support
