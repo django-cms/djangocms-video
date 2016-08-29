@@ -4,8 +4,6 @@ Enables the user to add a "Video player" plugin that can render content
 from external resources through an embed link or upload single files as
 sources to be displayed in an HTML5 player.
 """
-import os
-
 from django.db import models
 from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
