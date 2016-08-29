@@ -12,7 +12,7 @@ Changelog
 * Added Video Source Plugin
 * Added Video Track Plugin
 * Adapted files to resemble best practices
-* Updated languages
+* Updated translations
 
 
 1.1.0 (2016-25-08)
