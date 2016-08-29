@@ -33,12 +33,14 @@ One of the easiest contributions you can make is helping to translate this addon
 Documentation
 =============
 
-
 See ``REQUIREMENTS`` in the `setup.py <https://github.com/divio/djangocms-video/blob/master/setup.py>`_
 file for additional dependencies:
 
 * Python 2.7, 3.3 or higher
 * Django 1.8 or higher
+
+Make sure `django Filer <http://django-filer.readthedocs.io/en/latest/installation.html>`_
+is installed and configured appropriately.
 
 
 Installation

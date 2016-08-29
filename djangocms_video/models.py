@@ -4,8 +4,6 @@ Enables the user to add a "Video player" plugin that can render content
 from external resources through an embed link or upload single files as
 sources to be displayed in an HTML5 player.
 """
-import os
-
 from django.db import models
 from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
@@ -17,17 +15,6 @@ from djangocms_attributes_field.fields import AttributesField
 
 from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
-
-
-try:
-    from cms.models import get_plugin_media_path
-except ImportError:
-    def get_plugin_media_path(instance, filename):
-        """
-        See cms.models.pluginmodel.get_plugin_media_path on django CMS 3.0.4+
-        for information
-        """
-        return instance.get_media_path(filename)
 
 
 # mp4, are required for full browser support
@@ -97,15 +84,6 @@ class VideoPlayer(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
-    )
-    # player settings
-    # TODO remove
-    movie = models.FileField(
-        _('movie file'),
-        upload_to=get_plugin_media_path,
-        help_text=_('use .flv file or h264 encoded video file'),
-        blank=True,
-        null=True,
     )
 
     def __str__(self):

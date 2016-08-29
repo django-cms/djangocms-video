@@ -3,7 +3,7 @@ Changelog
 =========
 
 
-2.0.0 (unreleased)
+2.0.0 (2016-29-08)
 ==================
 * Dropped flash support
 * Dropped django CMS <3.3.1 support
@@ -12,6 +12,7 @@ Changelog
 * Added Video Source Plugin
 * Added Video Track Plugin
 * Adapted files to resemble best practices
+* Updated translations
 
 
 1.1.0 (2016-25-08)
