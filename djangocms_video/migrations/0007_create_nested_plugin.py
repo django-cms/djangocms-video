@@ -45,4 +45,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RunPython(create_videosourceplugin),
+        migrations.RemoveField(
+            model_name='videoplayer',
+            name='movie',
+        ),
     ]
