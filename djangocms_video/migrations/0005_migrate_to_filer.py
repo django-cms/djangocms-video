@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 def migrate_to_filer(apps, schema_editor):
     # Because filer is polymorphic, Djangos migration can't handle
-    # Image = apps.get_model('filer', 'Image')
     from filer.models import Image
     VideoPlayer = apps.get_model('djangocms_video', 'VideoPlayer')
     plugins = VideoPlayer.objects.all()

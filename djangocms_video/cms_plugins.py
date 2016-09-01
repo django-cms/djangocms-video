@@ -44,6 +44,7 @@ class VideoPlayerPlugin(CMSPluginBase):
     def get_render_template(self, context, instance, placeholder):
         return 'djangocms_video/{}/video_player.html'.format(instance.template)
 
+
 class VideoSourcePlugin(CMSPluginBase):
     model = models.VideoSource
     name = _('Source')
