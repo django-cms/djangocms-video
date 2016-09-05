@@ -44,7 +44,6 @@ class VideoPlayer(CMSPlugin):
         ('default', _('Default')),
     ]
 
-    # The label will be displayed as help text in the structure board view.
     template = models.CharField(
         verbose_name=_('Template'),
         choices=TEMPLATE_CHOICES + get_templates(),
