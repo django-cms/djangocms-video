@@ -27,7 +27,10 @@ ALLOWED_EXTENSIONS = getattr(
 
 # Add additional choices through the ``settings.py``.
 def get_templates():
-    choices = getattr(
+    choices = [
+        ('default', _('Default')),
+    ]
+    choices += getattr(
         settings,
         'DJANGOCMS_VIDEO_TEMPLATES',
         [],
@@ -40,14 +43,10 @@ class VideoPlayer(CMSPlugin):
     """
     Renders either an Iframe when ``link`` is provided or the HTML5 <video> tag
     """
-    TEMPLATE_CHOICES = [
-        ('default', _('Default')),
-    ]
-
     template = models.CharField(
         verbose_name=_('Template'),
-        choices=TEMPLATE_CHOICES + get_templates(),
-        default=TEMPLATE_CHOICES[0][0],
+        choices=get_templates(),
+        default=get_templates()[0][0],
         max_length=255,
     )
     label = models.CharField(

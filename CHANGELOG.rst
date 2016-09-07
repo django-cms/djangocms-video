@@ -7,6 +7,7 @@ Changelog
 ==================
 * Removed ``base.html`` for performance reasons
 * Fixed faulty settings parsing in aldryn_config.py
+* Adapted private ``get_template`` method
 
 
 2.0.0 (2016-29-08)
