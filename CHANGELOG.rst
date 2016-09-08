@@ -7,6 +7,7 @@ Changelog
 ==================
 * Removed ``base.html`` for performance reasons
 * Fixed faulty settings parsing in aldryn_config.py
+* Fixed an issue where ValidationError wasn't imported
 * Adapted private ``get_template`` method
 * Updated translations
 

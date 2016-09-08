@@ -6,6 +6,7 @@ sources to be displayed in an HTML5 player.
 """
 from django.db import models
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
 
