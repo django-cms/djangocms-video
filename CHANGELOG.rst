@@ -3,10 +3,11 @@ Changelog
 =========
 
 
-2.0.1 (unreleased)
+2.0.1 (2016-09-08)
 ==================
 * Removed ``base.html`` for performance reasons
 * Fixed faulty settings parsing in aldryn_config.py
+* Fixed an issue where ValidationError wasn't imported
 * Adapted private ``get_template`` method
 * Updated translations
 
