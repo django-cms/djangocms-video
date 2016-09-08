@@ -2,135 +2,130 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-25 20:47+0200\n"
+"POT-Creation-Date: 2016-09-08 10:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
-#: djangocms_video/cms_plugins.py:12 djangocms_video/cms_plugins.py:50
-#: djangocms_video/cms_plugins.py:77
+#: cms_plugins.py:12 cms_plugins.py:51 cms_plugins.py:78
 msgid "Video player"
 msgstr "Video player"
 
-#: djangocms_video/cms_plugins.py:24
+#: cms_plugins.py:24
 msgid "Embed video"
 msgstr "Embed video"
 
-#: djangocms_video/cms_plugins.py:30 djangocms_video/cms_plugins.py:61
-#: djangocms_video/cms_plugins.py:89
+#: cms_plugins.py:30 cms_plugins.py:62 cms_plugins.py:90
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
-#: djangocms_video/cms_plugins.py:49 djangocms_video/models.py:126
+#: cms_plugins.py:50 models.py:102
 msgid "Source"
 msgstr "Source"
 
-#: djangocms_video/cms_plugins.py:76
+#: cms_plugins.py:77
 msgid "Track"
 msgstr "Track"
 
-#: djangocms_video/models.py:57
+#: models.py:31
 msgid "Default"
 msgstr "Default"
 
-#: djangocms_video/models.py:62
+#: models.py:47
 msgid "Template"
 msgstr "Template"
 
-#: djangocms_video/models.py:68 djangocms_video/models.py:201
+#: models.py:53 models.py:177
 msgid "Label"
 msgstr "Label"
 
-#: djangocms_video/models.py:73
+#: models.py:58
 msgid "Embed link"
 msgstr "Embed link"
 
-#: djangocms_video/models.py:76
+#: models.py:61
 msgid ""
-"Use this field to embed videos from external services such as YouTube, Vimeo"
-" or others. Leave it blank to upload video files by adding nested \"Source\""
-" plugins."
+"Use this field to embed videos from external services such as YouTube, Vimeo "
+"or others. Leave it blank to upload video files by adding nested \"Source\" "
+"plugins."
 msgstr ""
-"Use this field to embed videos from external services such as YouTube, Vimeo"
-" or others. Leave it blank to upload video files by adding nested \"Source\""
-" plugins."
+"Use this field to embed videos from external services such as YouTube, Vimeo "
+"or others. Leave it blank to upload video files by adding nested \"Source\" "
+"plugins."
 
-#: djangocms_video/models.py:81
+#: models.py:66
 msgid "Poster"
 msgstr "Poster"
 
-#: djangocms_video/models.py:88 djangocms_video/models.py:142
-#: djangocms_video/models.py:206
+#: models.py:73 models.py:118 models.py:182
 msgid "Attributes"
 msgstr "Attributes"
 
-#: djangocms_video/models.py:104
-msgid "movie file"
-msgstr "movie file"
-
-#: djangocms_video/models.py:106
-msgid "use .flv file or h264 encoded video file"
-msgstr "use .flv file or h264 encoded video file"
-
-#: djangocms_video/models.py:133
+#: models.py:109
 msgid "Title"
 msgstr "Title"
 
-#: djangocms_video/models.py:138
+#: models.py:114
 msgid "Description"
 msgstr "Description"
 
-#: djangocms_video/models.py:155
+#: models.py:131
 #, python-brace-format
 msgid "Incorrect file type: {extension}."
 msgstr "Incorrect file type: {extension}."
 
-#: djangocms_video/models.py:162
+#: models.py:138
 msgid "<file is missing>"
 msgstr "<file is missing>"
 
-#: djangocms_video/models.py:176
+#: models.py:152
 msgid "Subtitles"
 msgstr "Subtitles"
 
-#: djangocms_video/models.py:177
+#: models.py:153
 msgid "Captions"
 msgstr "Captions"
 
-#: djangocms_video/models.py:178
+#: models.py:154
 msgid "Descriptions"
 msgstr "Descriptions"
 
-#: djangocms_video/models.py:179
+#: models.py:155
 msgid "Chapters"
 msgstr "Chapters"
 
-#: djangocms_video/models.py:183
+#: models.py:159
 msgid "Kind"
 msgstr "Kind"
 
-#: djangocms_video/models.py:188
+#: models.py:164
 msgid "Source file"
 msgstr "Source file"
 
-#: djangocms_video/models.py:195
+#: models.py:171
 msgid "Source language"
 msgstr "Source language"
 
-#: djangocms_video/models.py:198
+#: models.py:174
 msgid "Examples: \"en\" or \"de\" etc."
 msgstr "Examples: \"en\" or \"de\" etc."
 
-#: djangocms_video/templates/djangocms_video/default/video_player.html:20
+#: templates/djangocms_video/default/video_player.html:18
 msgid "Your browser doesn't support this video format."
 msgstr "Your browser doesn't support this video format."
+
+#~ msgid "movie file"
+#~ msgstr "movie file"
+
+#~ msgid "use .flv file or h264 encoded video file"
+#~ msgstr "use .flv file or h264 encoded video file"
