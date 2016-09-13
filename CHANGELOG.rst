@@ -3,7 +3,7 @@ Changelog
 =========
 
 
-2.0.1 (2016-09-08)
+2.0.1 (2016-08-09)
 ==================
 * Removed ``base.html`` for performance reasons
 * Fixed faulty settings parsing in aldryn_config.py
