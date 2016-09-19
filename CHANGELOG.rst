@@ -5,7 +5,8 @@ Changelog
 
 2.0.2 (unreleased)
 ==================
-- Fixed an issues with migrations where Null values caused ``IntegrityError``
+
+* Fixed an issues with migrations where Null values caused ``IntegrityError``
 
 
 2.0.1 (2016-08-09)
