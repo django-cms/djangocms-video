@@ -30,11 +30,6 @@ class Migration(migrations.Migration):
             name='template',
             field=models.CharField(default='default', max_length=255, verbose_name='Template', choices=[('default', 'Default')]),
         ),
-        migrations.AlterField(
-            model_name='videoplayer',
-            name='embed_link',
-            field=models.CharField(help_text='Use this field to embed videos from external services such as YouTube, Vimeo or others. Leave it blank to upload video files by adding nested "Source" plugins.', max_length=255, verbose_name='Embed link', blank=True),
-        ),
         migrations.CreateModel(
             name='VideoSource',
             fields=[
