@@ -5,7 +5,7 @@ from django.db import migrations, models
 import filer.fields.file
 import django.db.models.deletion
 import djangocms_attributes_field.fields
-from djangocms_style.models import get_templates
+from djangocms_video.models import get_templates
 
 
 class Migration(migrations.Migration):
