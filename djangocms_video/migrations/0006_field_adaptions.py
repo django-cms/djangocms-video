@@ -5,6 +5,7 @@ from django.db import migrations, models
 import filer.fields.file
 import django.db.models.deletion
 import djangocms_attributes_field.fields
+from djangocms_style.models import get_templates
 
 
 class Migration(migrations.Migration):
@@ -28,7 +29,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='videoplayer',
             name='template',
-            field=models.CharField(default='default', max_length=255, verbose_name='Template', choices=[('default', 'Default')]),
+            field=models.CharField(default=get_templates()[0][0], max_length=255, verbose_name='Template', choices=get_templates()),
         ),
         migrations.CreateModel(
             name='VideoSource',
