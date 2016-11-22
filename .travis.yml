@@ -7,15 +7,15 @@ env:
   - TOX_ENV=py27-latest
   - TOX_ENV=py34-latest
   # Django 1.8
-  - TOX_ENV=py34-dj18-cms33
-  - TOX_ENV=py34-dj18-cms32
+  - TOX_ENV=py27-dj18-cms34
   - TOX_ENV=py27-dj18-cms33
-  - TOX_ENV=py27-dj18-cms32
+  - TOX_ENV=py34-dj18-cms34
+  - TOX_ENV=py34-dj18-cms33
   # Django 1.9
-  - TOX_ENV=py34-dj19-cms33
-  - TOX_ENV=py34-dj19-cms32
+  - TOX_ENV=py27-dj19-cms34
   - TOX_ENV=py27-dj19-cms33
-  - TOX_ENV=py27-dj19-cms32
+  - TOX_ENV=py34-dj19-cms34
+  - TOX_ENV=py34-dj19-cms33
 
 install:
   - pip install tox coverage
