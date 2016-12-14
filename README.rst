@@ -38,6 +38,7 @@ file for additional dependencies:
 
 * Python 2.7, 3.3 or higher
 * Django 1.8 or higher
+* django-filer 1.2.3 or higher
 
 Make sure `django Filer <http://django-filer.readthedocs.io/en/latest/installation.html>`_
 is installed and configured appropriately.
