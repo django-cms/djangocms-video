@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
-from . import models
+from . import models, forms
 
 
 class VideoPlayerPlugin(CMSPluginBase):
@@ -13,6 +13,7 @@ class VideoPlayerPlugin(CMSPluginBase):
     text_enabled = True
     allow_children = True
     child_classes = ['VideoSourcePlugin', 'VideoTrackPlugin']
+    form = forms.VideoPlayerPluginForm
 
     fieldsets = [
         (None, {
