@@ -28,15 +28,13 @@ ALLOWED_EXTENSIONS = getattr(
 
 # Add additional choices through the ``settings.py``.
 def get_templates():
-    choices = [
+    return [
         ('default', _('Default')),
-    ]
-    choices += getattr(
+    ] + getattr(
         settings,
         'DJANGOCMS_VIDEO_TEMPLATES',
         [],
     )
-    return choices
 
 
 @python_2_unicode_compatible
@@ -59,9 +57,11 @@ class VideoPlayer(CMSPlugin):
         verbose_name=_('Embed link'),
         blank=True,
         max_length=255,
-        help_text=_('Use this field to embed videos from external services '
+        help_text=_(
+            'Use this field to embed videos from external services '
             'such as YouTube, Vimeo or others. Leave it blank to upload video '
-            'files by adding nested "Source" plugins.'),
+            'files by adding nested "Source" plugins.'
+        ),
     )
     poster = FilerImageField(
         verbose_name=_('Poster'),
@@ -126,11 +126,10 @@ class VideoSource(CMSPlugin):
         return str(self.pk)
 
     def clean(self):
-        if (self.source_file and
-            self.source_file.extension not in ALLOWED_EXTENSIONS):
+        if self.source_file and self.source_file.extension not in ALLOWED_EXTENSIONS:
             raise ValidationError(
                 ugettext('Incorrect file type: {extension}.')
-                    .format(extension=self.source_file.extension)
+                .format(extension=self.source_file.extension)
             )
 
     def get_short_description(self):
@@ -169,7 +168,7 @@ class VideoTrack(CMSPlugin):
         related_name='+',
     )
     srclang = models.CharField(
-        verbose_name = _('Source language'),
+        verbose_name=_('Source language'),
         blank=True,
         max_length=255,
         help_text=_('Examples: "en" or "de" etc.'),
