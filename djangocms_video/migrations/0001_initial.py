@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Video',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(primary_key=True, to='cms.CMSPlugin', auto_created=True, parent_link=True, serialize=False)),
+                ('cmsplugin_ptr', models.OneToOneField(primary_key=True, to='cms.CMSPlugin', auto_created=True, parent_link=True, serialize=False, on_delete=models.CASCADE)),
                 ('movie', models.FileField(null=True, verbose_name='movie file', upload_to=cms.models.pluginmodel.get_plugin_media_path, help_text='use .flv file or h264 encoded video file', blank=True)),
                 ('movie_url', models.CharField(max_length=255, null=True, help_text='vimeo or youtube video url. Example: http://www.youtube.com/watch?v=-iJ7bs4mTUY', blank=True, verbose_name='movie url')),
                 ('image', models.ImageField(null=True, verbose_name='image', upload_to=cms.models.pluginmodel.get_plugin_media_path, help_text='preview image file', blank=True)),
