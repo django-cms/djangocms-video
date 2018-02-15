@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='videoplayer',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='djangocms_video_videoplayer', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='djangocms_video_videoplayer', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.RenameField(
             model_name='videoplayer',

@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='VideoSource',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='djangocms_video_videosource', auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='djangocms_video_videosource', auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('text_title', models.CharField(max_length=255, verbose_name='Title', blank=True)),
                 ('text_description', models.TextField(verbose_name='Description', blank=True)),
                 ('attributes', djangocms_attributes_field.fields.AttributesField(default=dict, verbose_name='Attributes', blank=True)),
@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='VideoTrack',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='djangocms_video_videotrack', auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='djangocms_video_videotrack', auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('kind', models.CharField(max_length=255, verbose_name='Kind', choices=[('subtitles', 'Subtitles'), ('captions', 'Captions'), ('descriptions', 'Descriptions'), ('chapters', 'Chapters')])),
                 ('srclang', models.CharField(help_text='Examples: "en" or "de" etc.', max_length=255, verbose_name='Source language', blank=True)),
                 ('label', models.CharField(max_length=255, verbose_name='Label', blank=True)),
