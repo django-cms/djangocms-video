@@ -26,6 +26,7 @@ class VideoPlayerPlugin(CMSPluginBase):
             'classes': ('collapse',),
             'fields': (
                 'embed_link',
+                'parameters',
             )
         }),
         (_('Advanced settings'), {
