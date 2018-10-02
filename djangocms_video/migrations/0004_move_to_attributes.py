@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import migrations, models
 import json
+
+from django.db import migrations, models
 
 
 def migrate_to_attributes(apps, schema_editor):

@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
 import cms.models.pluginmodel
+import django.db.models.deletion
 from django.conf import settings
-
+from django.db import migrations, models
 
 # settings does not exist anymore in 2.x
 VIDEO_AUTOPLAY = getattr(settings, "VIDEO_AUTOPLAY", False)
 VIDEO_AUTOHIDE = getattr(settings, "VIDEO_AUTOHIDE", False)
 VIDEO_FULLSCREEN = getattr(settings, "VIDEO_FULLSCREEN", True)
 VIDEO_LOOP = getattr(settings, "VIDEO_LOOP", False)
-VIDEO_AUTOPLAY = getattr(settings, "VIDEO_AUTOPLAY", False)
-VIDEO_AUTOPLAY = getattr(settings, "VIDEO_AUTOPLAY", False)
 
 VIDEO_BG_COLOR = getattr(settings, "VIDEO_BG_COLOR", "000000")
 VIDEO_TEXT_COLOR = getattr(settings, "VIDEO_TEXT_COLOR", "FFFFFF")
@@ -38,7 +36,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Video',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(primary_key=True, to='cms.CMSPlugin', auto_created=True, parent_link=True, serialize=False)),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, to='cms.CMSPlugin', auto_created=True, parent_link=True, serialize=False)),
                 ('movie', models.FileField(null=True, verbose_name='movie file', upload_to=cms.models.pluginmodel.get_plugin_media_path, help_text='use .flv file or h264 encoded video file', blank=True)),
                 ('movie_url', models.CharField(max_length=255, null=True, help_text='vimeo or youtube video url. Example: http://www.youtube.com/watch?v=-iJ7bs4mTUY', blank=True, verbose_name='movie url')),
                 ('image', models.ImageField(null=True, verbose_name='image', upload_to=cms.models.pluginmodel.get_plugin_media_path, help_text='preview image file', blank=True)),
