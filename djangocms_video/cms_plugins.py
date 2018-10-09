@@ -70,7 +70,7 @@ class VideoSourcePlugin(CMSPluginBase):
     ]
 
     def get_render_template(self, context, instance, placeholder):
-        return 'djangocms_video/{}/source.html'.format(context['video_template'])
+        return 'djangocms_video/{}/source.html'.format(context.get('video_template', 'default'))
 
 
 class VideoTrackPlugin(CMSPluginBase):
@@ -98,7 +98,7 @@ class VideoTrackPlugin(CMSPluginBase):
     ]
 
     def get_render_template(self, context, instance, placeholder):
-        return 'djangocms_video/{}/track.html'.format(context['video_template'])
+        return 'djangocms_video/{}/track.html'.format(context.get('video_template', 'default'))
 
 
 plugin_pool.register_plugin(VideoPlayerPlugin)
