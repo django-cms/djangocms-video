@@ -4,6 +4,8 @@ Enables the user to add a "Video player" plugin that can render content
 from external resources through an embed link or upload single files as
 sources to be displayed in an HTML5 player.
 """
+import sys
+
 from django.db import models
 from django.conf import settings
 from django.core.exceptions import ValidationError
@@ -16,6 +18,12 @@ from djangocms_attributes_field.fields import AttributesField
 
 from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
+
+if sys.version_info.major < 3:
+    from urlparse import urlparse, parse_qsl, urlunparse
+    from urllib import urlencode
+else:
+    from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 
 
 # mp4, are required for full browser support
@@ -63,6 +71,13 @@ class VideoPlayer(CMSPlugin):
             'files by adding nested "Source" plugins.'
         ),
     )
+    parameters = AttributesField(
+        verbose_name=_('Parameters'),
+        blank=True,
+        help_text=_(
+            'Parameters are appended to the video link if provided.'
+        ),
+    )
     poster = FilerImageField(
         verbose_name=_('Poster'),
         blank=True,
@@ -92,6 +107,21 @@ class VideoPlayer(CMSPlugin):
         # Because we have a ForeignKey, it's required to copy over
         # the reference from the instance to the new plugin.
         self.poster = oldinstance.poster
+
+    @property
+    def embed_link_with_parameters(self):
+        if not self.embed_link:
+            return ''
+        if not self.parameters:
+            return self.embed_link
+        return self._append_url_parameters(self.embed_link, self.parameters)
+
+    def _append_url_parameters(self, url, params):
+        url_parts = list(urlparse(url))
+        query = dict(parse_qsl(url_parts[4]))
+        query.update(params)
+        url_parts[4] = urlencode(query)
+        return urlunparse(url_parts)
 
 
 @python_2_unicode_compatible

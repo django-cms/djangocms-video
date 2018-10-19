@@ -2,43 +2,43 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-08 10:11+0200\n"
+"POT-Creation-Date: 2018-07-23 14:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Angelo Dini <finalangeljp@hotmail.com>, 2016\n"
 "Language-Team: Swedish (https://www.transifex.com/divio/teams/58664/sv/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cms_plugins.py:12 cms_plugins.py:51 cms_plugins.py:78
+#: cms_plugins.py:12 cms_plugins.py:53 cms_plugins.py:80
 msgid "Video player"
 msgstr ""
 
-#: cms_plugins.py:24
+#: cms_plugins.py:25
 msgid "Embed video"
 msgstr ""
 
-#: cms_plugins.py:30 cms_plugins.py:62 cms_plugins.py:90
+#: cms_plugins.py:32 cms_plugins.py:64 cms_plugins.py:92
 msgid "Advanced settings"
 msgstr ""
 
-#: cms_plugins.py:50 models.py:102
+#: cms_plugins.py:52 models.py:129
 msgid "Source"
 msgstr ""
 
-#: cms_plugins.py:77
+#: cms_plugins.py:79
 msgid "Track"
 msgstr ""
 
-#: models.py:31
+#: models.py:33
 msgid "Default"
 msgstr ""
 
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: models.py:53 models.py:177
+#: models.py:53 models.py:203
 msgid "Label"
 msgstr ""
 
@@ -54,76 +54,81 @@ msgstr ""
 msgid "Embed link"
 msgstr ""
 
-#: models.py:61
+#: models.py:62
 msgid ""
-"Use this field to embed videos from external services such as YouTube, Vimeo"
-" or others. Leave it blank to upload video files by adding nested \"Source\""
-" plugins."
+"Use this field to embed videos from external services such as YouTube, Vimeo "
+"or others. Leave it blank to upload video files by adding nested \"Source\" "
+"plugins."
 msgstr ""
 
-#: models.py:66
+#: models.py:68
+msgid "Parameters"
+msgstr ""
+
+#: models.py:71
+msgid "Parameters are appended to the video link if provided."
+msgstr ""
+
+#: models.py:75
 msgid "Poster"
 msgstr ""
 
-#: models.py:73 models.py:118 models.py:182
+#: models.py:82 models.py:145 models.py:208
 msgid "Attributes"
 msgstr ""
 
-#: models.py:109
+#: models.py:136
 msgid "Title"
 msgstr ""
 
-#: models.py:114
+#: models.py:141
 msgid "Description"
 msgstr ""
 
-#: models.py:131
+#: models.py:157
 #, python-brace-format
 msgid "Incorrect file type: {extension}."
 msgstr ""
 
-#: models.py:138
+#: models.py:164
 msgid "<file is missing>"
 msgstr ""
 
-#: models.py:152
+#: models.py:178
 msgid "Subtitles"
 msgstr ""
 
-#: models.py:153
+#: models.py:179
 msgid "Captions"
 msgstr ""
 
-#: models.py:154
+#: models.py:180
 msgid "Descriptions"
 msgstr ""
 
-#: models.py:155
+#: models.py:181
 msgid "Chapters"
 msgstr ""
 
-#: models.py:159
+#: models.py:185
 msgid "Kind"
 msgstr ""
 
-#: models.py:164
+#: models.py:190
 msgid "Source file"
 msgstr ""
 
-#: models.py:171
+#: models.py:197
 msgid "Source language"
 msgstr ""
 
-#: models.py:174
+#: models.py:200
 msgid "Examples: \"en\" or \"de\" etc."
 msgstr ""
 
 #: templates/djangocms_video/default/video_player.html:18
 msgid "Your browser doesn't support this video format."
 msgstr ""
-
-#~ msgid "movie file"
-#~ msgstr ""
 
 #~ msgid "use .flv file or h264 encoded video file"
 #~ msgstr "använd .flv-fil eller en h264-kodad videofil"
