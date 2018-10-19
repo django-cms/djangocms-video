@@ -2,11 +2,19 @@
 Changelog
 =========
 
+2.0.5 (2018-10-19)
+==================
+
+* Deal with missing context from aldryn-search
+* Add support for newer Django versions
+* Add parameters for embed_link
+* Fix swappable filer image model support
+
+
 2.0.4 (2017-08-15)
 ==================
 
-* Added URL parsing for the embed url. It now accepts various versions
-  of YouTube urls and converts them to an embed link.
+* Added URL parsing for the embed url. It now accepts various versions of YouTube urls and converts them to an embed link.
 * Added the python3.5 test env
 
 
