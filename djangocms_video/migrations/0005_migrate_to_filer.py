@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.db import migrations, models
 
 
 def migrate_to_filer(apps, schema_editor):
     # Because filer is polymorphic, Djangos migration can't handle
-    from filer.models import Image
+    from filer.utils.loader import load_model
+
+    Image = load_model(settings.FILER_IMAGE_MODEL)
     VideoPlayer = apps.get_model('djangocms_video', 'VideoPlayer')
     plugins = VideoPlayer.objects.all()
 
@@ -24,7 +27,7 @@ def migrate_to_filer(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('filer', '0002_auto_20150606_2003'),
+        migrations.swappable_dependency(settings.FILER_IMAGE_MODEL),
         ('djangocms_video', '0004_move_to_attributes'),
     ]
 

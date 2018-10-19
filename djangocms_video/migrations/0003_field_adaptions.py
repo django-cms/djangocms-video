@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.db import migrations, models
 import filer.fields.image
 import django.db.models.deletion
@@ -10,6 +11,7 @@ import djangocms_attributes_field.fields
 class Migration(migrations.Migration):
 
     dependencies = [
+        migrations.swappable_dependency(settings.FILER_IMAGE_MODEL),
         ('djangocms_video', '0002_set_related_name_for_cmsplugin_ptr'),
     ]
 
@@ -31,7 +33,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='videoplayer',
             name='poster',
-            field=filer.fields.image.FilerImageField(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name='Poster', blank=True, to='filer.Image', null=True),
+            field=filer.fields.image.FilerImageField(related_name='+', on_delete=django.db.models.deletion.SET_NULL, verbose_name='Poster', blank=True, to=settings.FILER_IMAGE_MODEL, null=True),
         ),
         migrations.AddField(
             model_name='videoplayer',
