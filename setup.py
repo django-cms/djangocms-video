@@ -4,7 +4,6 @@ from setuptools import find_packages, setup
 
 from djangocms_video import __version__
 
-
 REQUIREMENTS = [
     'django-cms>=3.3.1',
     'django-filer>=1.3.0',
@@ -25,6 +24,7 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
     'Topic :: Internet :: WWW/HTTP',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     'Topic :: Software Development :: Libraries :: Application Frameworks',
@@ -35,7 +35,7 @@ CLASSIFIERS = [
 setup(
     name='djangocms-video',
     version=__version__,
-    description=('Adds video plugin to django CMS.'),
+    description='Adds video plugin to django CMS.',
     author='Divio AG',
     author_email='info@divio.com',
     url='https://github.com/divio/djangocms-video',
