@@ -87,7 +87,7 @@ You can run tests by executing::
 
     virtualenv env
     source env/bin/activate
-    pip install -r test_requirements/base.txt
+    pip install -r tests/requirements.txt
     python setup.py test
 
 
