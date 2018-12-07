@@ -2,7 +2,7 @@
 Changelog
 =========
 
-2.1.1 (unreleased)
+2.1.1 (2018-12-07)
 ==================
 
 * Fixed test matrix
