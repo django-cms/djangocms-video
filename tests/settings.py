@@ -7,14 +7,14 @@ HELPER_SETTINGS = {
         'filer',
         'mptt',
     ],
-    'ALLOWED_HOSTS': ['localhost'],
+    'LANGUAGE_CODE': 'en',
     'CMS_LANGUAGES': {
         1: [{
             'code': 'en',
             'name': 'English',
         }]
     },
-    'LANGUAGE_CODE': 'en',
+    'ALLOWED_HOSTS': ['localhost'],
 }
 
 
