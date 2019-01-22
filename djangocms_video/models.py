@@ -4,6 +4,8 @@ Enables the user to add a "Video player" plugin that can render content
 from external resources through an embed link or upload single files as
 sources to be displayed in an HTML5 player.
 """
+from __future__ import unicode_literals
+
 import sys
 
 from cms.models import CMSPlugin
