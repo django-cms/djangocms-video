@@ -2,9 +2,10 @@
 from __future__ import unicode_literals
 
 import django.db.models.deletion
+from django.db import migrations, models
+
 import djangocms_attributes_field.fields
 import filer.fields.file
-from django.db import migrations, models
 
 from djangocms_video.models import get_templates
 
