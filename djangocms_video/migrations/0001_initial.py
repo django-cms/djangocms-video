@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import cms.models.pluginmodel
 import django.db.models.deletion
 from django.conf import settings
 from django.db import migrations, models
+
+import cms.models.pluginmodel
+
 
 # settings does not exist anymore in 2.x
 VIDEO_AUTOPLAY = getattr(settings, "VIDEO_AUTOPLAY", False)

@@ -3,6 +3,7 @@ from django.test import TestCase
 
 from djangocms_video.models import VideoPlayer
 
+
 EXAMPLE_VIDEO = 'http://www.youtube.com/watch?v=-iJ7bs4mTUY'
 
 
