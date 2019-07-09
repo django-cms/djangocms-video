@@ -26,7 +26,7 @@ def migrate_to_attributes(apps, schema_editor):
         'data-buttonhighlightcolor': 'buttonhighlightcolor',
     }
 
-    for plugin in VideoPlayer.objects.all():
+    for plugin in VideoPlayer.objects.all():  # pragma: no cover
         for new, old in mapping.items():
             attrs[new] = str(getattr(plugin, old)).strip()
         # needs to be stored as dict to the database

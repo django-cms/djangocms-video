@@ -12,7 +12,7 @@ def create_videosourceplugin(apps, schema_editor):
     VideoPlayer = apps.get_model('djangocms_video', 'VideoPlayer')
     plugins = VideoPlayer.objects.all()
 
-    for video in plugins:
+    for video in plugins:  # pragma: no cover
         # adapt plugin name
         plugins.filter(pk=video.pk).update(plugin_type='VideoPlayerPlugin')
         # add nested video source plugin
