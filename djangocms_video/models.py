@@ -21,6 +21,7 @@ from djangocms_attributes_field.fields import AttributesField
 from filer.fields.file import FilerFileField
 from filer.fields.image import FilerImageField
 
+
 if sys.version_info.major < 3:
     from urlparse import urlparse, parse_qsl, urlunparse
     from urllib import urlencode

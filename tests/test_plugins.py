@@ -6,7 +6,7 @@ from djangocms_video.cms_plugins import (
     VideoPlayerPlugin, VideoSourcePlugin, VideoTrackPlugin,
 )
 
-from .helpers import get_filer_file, get_filer_folder
+from .helpers import get_filer_file
 
 
 class VideoPlayerPluginsTestCase(CMSTestCase):
@@ -56,9 +56,6 @@ class VideoPlayerPluginsTestCase(CMSTestCase):
             language=self.language,
         )
         self.assertEqual(plugin.plugin_type, "VideoTrackPlugin")
-
-
-
 
     def test_plugin_structure(self):
         video_file = get_filer_file("test_file.mp4")
