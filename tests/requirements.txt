@@ -1,4 +1,7 @@
-# other requirements
 djangocms-helper
 tox
 coverage
+isort
+flake8
+# override "pyflakes<2.1" from djangocms-helper
+pyflakes>=2.1.0
