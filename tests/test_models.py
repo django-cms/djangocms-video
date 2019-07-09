@@ -83,10 +83,8 @@ class VideoModelsTestCase(TestCase):
             self.embed_link,
         )
         instance.parameters = {"autoplay": "true"}
-        self.assertEqual(
-            instance.embed_link_with_parameters,
-            "http://www.youtube.com/watch?v=-wVD1eIrQoQs&autoplay=true",
-        )
+        self.assertIn("v=-wVD1eIrQoQs", instance.embed_link_with_parameters)
+        self.assertIn("autoplay=true", instance.embed_link_with_parameters)
 
     def test_video_source_instance(self):
         VideoSource.objects.create(
