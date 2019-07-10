@@ -30,7 +30,6 @@ class VideoPlayerPluginsTestCase(CMSTestCase):
         self.video_file = get_filer_file("test_file.mp4")
         self.track_file = get_filer_file("test_track.vtt")
 
-
     def tearDown(self):
         self.page.delete()
         self.home.delete()
