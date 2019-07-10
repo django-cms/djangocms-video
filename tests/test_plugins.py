@@ -27,11 +27,16 @@ class VideoPlayerPluginsTestCase(CMSTestCase):
         self.page.publish(self.language)
         self.placeholder = self.page.placeholders.get(slot="content")
         self.superuser = self.get_superuser()
+        self.video_file = get_filer_file("test_file.mp4")
+        self.track_file = get_filer_file("test_track.vtt")
+
 
     def tearDown(self):
         self.page.delete()
         self.home.delete()
         self.superuser.delete()
+        self.video_file.delete()
+        self.track_file.delete()
 
     def test_player_plugin(self):
         plugin = add_plugin(
@@ -58,8 +63,6 @@ class VideoPlayerPluginsTestCase(CMSTestCase):
         self.assertEqual(plugin.plugin_type, "VideoTrackPlugin")
 
     def test_plugin_structure(self):
-        video_file = get_filer_file("test_file.mp4")
-        track_file = get_filer_file("test_track.vtt")
         request_url = self.page.get_absolute_url(self.language) + "?toolbar_off=true"
 
         parent = add_plugin(
@@ -81,7 +84,7 @@ class VideoPlayerPluginsTestCase(CMSTestCase):
             placeholder=self.placeholder,
             plugin_type=VideoSourcePlugin.__name__,
             language=self.language,
-            source_file=video_file,
+            source_file=self.video_file,
         )
         self.page.publish(self.language)
         self.assertEqual(child.source_file.label, "test_file.mp4")
@@ -90,7 +93,7 @@ class VideoPlayerPluginsTestCase(CMSTestCase):
             response = self.client.get(request_url)
 
         self.assertIn(b"<video controls", response.content)
-        self.assertContains(response, video_file.label)
+        self.assertContains(response, self.video_file.label)
 
         track = add_plugin(
             target=parent,
@@ -98,7 +101,7 @@ class VideoPlayerPluginsTestCase(CMSTestCase):
             plugin_type=VideoTrackPlugin.__name__,
             language=self.language,
             kind="subtitles",
-            src=track_file,
+            src=self.track_file,
             srclang=self.language,
         )
         self.page.publish(self.language)
@@ -108,8 +111,4 @@ class VideoPlayerPluginsTestCase(CMSTestCase):
             response = self.client.get(request_url)
 
         self.assertIn(b"<track kind", response.content)
-        self.assertContains(response, track_file.label)
-
-        # cleanup
-        video_file.delete()
-        track_file.delete()
+        self.assertContains(response, self.track_file.label)

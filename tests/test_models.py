@@ -135,4 +135,4 @@ class VideoModelsTestCase(TestCase):
         self.assertEqual(instance.__str__(), "subtitles (en)")
         # case when the folder has been removed
         instance.srclang = None
-        self.assertEqual(instance.__str__(), "subtitles")
+        self.assertEqual(instance.__str__(), "subtitles")   
