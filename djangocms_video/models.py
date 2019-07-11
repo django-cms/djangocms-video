@@ -22,18 +22,21 @@ from filer.fields.file import FilerFileField
 from filer.fields.image import FilerImageField
 
 
-if sys.version_info.major < 3:
+if sys.version_info.major < 3:  # pragma: no cover
     from urlparse import urlparse, parse_qsl, urlunparse
     from urllib import urlencode
 else:
     from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 
-# mp4, are required for full browser support
-ALLOWED_EXTENSIONS = getattr(
-    settings,
-    'DJANGOCMS_VIDEO_ALLOWED_EXTENSIONS',
-    ['mp4', 'webm', 'ogv'],
-)
+
+# mp3 is supported by all major browsers
+def get_extensions():
+    extensions = getattr(
+        settings,
+        'DJANGOCMS_VIDEO_ALLOWED_EXTENSIONS',
+        ['mp4', 'webm', 'ogv'],
+    )
+    return extensions
 
 
 # Add additional choices through the ``settings.py``.
@@ -159,7 +162,7 @@ class VideoSource(CMSPlugin):
         return str(self.pk)
 
     def clean(self):
-        if self.source_file and self.source_file.extension not in ALLOWED_EXTENSIONS:
+        if self.source_file and self.source_file.extension not in get_extensions():
             raise ValidationError(
                 ugettext('Incorrect file type: {extension}.')
                 .format(extension=self.source_file.extension)
@@ -219,5 +222,5 @@ class VideoTrack(CMSPlugin):
     def __str__(self):
         label = self.kind
         if self.srclang:
-            label += ' {}'.format(self.srclang)
+            label += ' ({})'.format(self.srclang)
         return label

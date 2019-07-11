@@ -13,7 +13,7 @@ def migrate_to_filer(apps, schema_editor):
     VideoPlayer = apps.get_model('djangocms_video', 'VideoPlayer')
     plugins = VideoPlayer.objects.all()
 
-    for video in plugins:
+    for video in plugins:  # pragma: no cover
         if video.image:
             poster = Image.objects.get_or_create(
                 file=video.image.file,

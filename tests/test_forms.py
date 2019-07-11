@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.test import TestCase
 
-from djangocms_video.forms import YOUTUBE_EMBED_URL, VideoPlayerPluginForm
+from djangocms_video.forms import YOUTUBE_EMBED_URL, YOUTUBE_URL_RE, VideoPlayerPluginForm
 
 
 class VideoFormTestCase(TestCase):
@@ -67,3 +67,19 @@ class VideoFormTestCase(TestCase):
                 id=video_id
             )
             test_url(url)
+
+    def test_clean_embed_link(self):
+        form_data = {'template': 'default'}
+        form_data['embed_link'] = "http://www.youtube.com"
+        form = VideoPlayerPluginForm(data=form_data)
+        self.assertTrue(form.is_valid())
+        self.assertEqual(
+            form.cleaned_data['embed_link'],
+            form.clean_embed_link(),
+        )
+        self.assertTrue(YOUTUBE_URL_RE.match(form.cleaned_data['embed_link']))
+
+        form_data['embed_link'] = "http://www.vimeo.com"
+        form = VideoPlayerPluginForm(data=form_data)
+        self.assertTrue(form.is_valid())
+        self.assertIsNone(YOUTUBE_URL_RE.match(form.cleaned_data['embed_link']))

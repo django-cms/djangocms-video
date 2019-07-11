@@ -1,5 +1,6 @@
 language: python
 
+dist: xenial
 sudo: false
 
 matrix:
@@ -27,7 +28,6 @@ matrix:
       env: DJANGO='dj22' CMS='cms37'
     - python: 3.7
       env: DJANGO='dj22' CMS='cms37'
-      dist: xenial
       sudo: true
 
 install:
