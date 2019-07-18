@@ -29,7 +29,7 @@ else:
     from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 
 
-# mp3 is supported by all major browsers
+# The mp4 file format is supported by all major browsers
 def get_extensions():
     extensions = getattr(
         settings,
