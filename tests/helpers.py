@@ -111,7 +111,7 @@ def get_filer_folder(folder_name="test_folder", parent=None):
     """
     Creates and returns a filer folder
 
-    :param folder_name: the name of the folder to be used (default "folder_name")
+    :param folder_name: the name of the folder to be used (default "test_folder")
     :param parent: optionally provide a parent folder
     :returns: filer folder instance
     """
