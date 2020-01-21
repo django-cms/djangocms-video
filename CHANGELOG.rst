@@ -6,6 +6,7 @@ Changelog
 2.2.1 (unreleased)
 ==================
 
+* Added support for Django 3.0
 * Added further tests to raise coverage
 * Fixed smaller issues found during testing
 
