@@ -11,7 +11,6 @@ import sys
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext
 from django.utils.translation import ugettext_lazy as _
 
@@ -20,6 +19,7 @@ from cms.models import CMSPlugin
 from djangocms_attributes_field.fields import AttributesField
 from filer.fields.file import FilerFileField
 from filer.fields.image import FilerImageField
+from six import python_2_unicode_compatible
 
 
 if sys.version_info.major < 3:  # pragma: no cover

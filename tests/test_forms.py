@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.test import TestCase
 
-from djangocms_video.forms import YOUTUBE_EMBED_URL, YOUTUBE_URL_RE, VideoPlayerPluginForm
+from djangocms_video.forms import (
+    YOUTUBE_EMBED_URL, YOUTUBE_URL_RE, VideoPlayerPluginForm,
+)
 
 
 class VideoFormTestCase(TestCase):
