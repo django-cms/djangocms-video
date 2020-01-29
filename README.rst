@@ -43,7 +43,7 @@ file for additional dependencies:
 
 * Django Filer 1.2.4 or higher
 
-Make sure `django Filer <http://django-filer.readthedocs.io/en/latest/installation.html>`_
+Make sure `django-filer <http://django-filer.readthedocs.io/en/latest/installation.html>`_
 is installed and configured appropriately.
 
 
