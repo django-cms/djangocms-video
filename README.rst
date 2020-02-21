@@ -82,6 +82,13 @@ the default setting by overriding::
 
     DJANGOCMS_VIDEO_ALLOWED_EXTENSIONS = ['mp4', 'webm', 'ogv']
 
+The plugin detects YouTube URLs using a regular expression and canonicalizes
+them to `//www.youtube.com/embed/{}` where the placeholder is replaced by the
+video id.
+
+The canonical URL can be reconfigured with a configuration setting::
+
+    DJANGOCMS_VIDEO_YOUTUBE_EMBED_URL = '//www.youtube-nocookie.com/embed/{}'
 
 Running Tests
 -------------
