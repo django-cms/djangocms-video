@@ -2,6 +2,7 @@
 import re
 
 from django import forms
+from django.conf import settings
 
 from . import models
 
@@ -9,7 +10,7 @@ from . import models
 YOUTUBE_URL_RE = re.compile(r'(?:(?:http://|https://|//)?(?:www\.)?youtu\.?be.*).*')
 # https://stackoverflow.com/a/9102270
 YOUTUBE_VIDEO_ID_RE = re.compile(r'(?:[?&]v=|/embed/|/1/|/v/|https?://(?:www\.)?youtu\.be/)([^&\n?#]+)')
-YOUTUBE_EMBED_URL = '//www.youtube.com/embed/{}'
+DEFAULT_YOUTUBE_EMBED_URL = '//www.youtube.com/embed/{}'
 
 
 class VideoPlayerPluginForm(forms.ModelForm):
@@ -25,5 +26,6 @@ class VideoPlayerPluginForm(forms.ModelForm):
             # try to get the video id
             results = YOUTUBE_VIDEO_ID_RE.findall(link)
             if results:
-                link = YOUTUBE_EMBED_URL.format(results[0])
+                embed_url = getattr(settings, "DJANGOCMS_VIDEO_YOUTUBE_EMBED_URL", DEFAULT_YOUTUBE_EMBED_URL)
+                link = embed_url.format(results[0])
         return link

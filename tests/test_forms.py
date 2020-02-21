@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
-from django.test import TestCase
+from django.test import TestCase, override_settings
 
 from djangocms_video.forms import (
-    YOUTUBE_EMBED_URL, YOUTUBE_URL_RE, VideoPlayerPluginForm,
+    DEFAULT_YOUTUBE_EMBED_URL, YOUTUBE_URL_RE, VideoPlayerPluginForm,
 )
+
+YOUTUBE_NOCOOKIE_EMBED_URL = "//www.youtube-nocookie.com/embed/{}"
 
 
 class VideoFormTestCase(TestCase):
-
-    def setUp(self):
-        self.form_data = {'template': 'default'}
-
-    def test_embed_link_validation(self):
-        base_urls = [
+    @classmethod
+    def setUpTestData(cls):
+        cls.base_urls = [
             '//youtube.com',
             '//www.youtube.com',
 
@@ -23,7 +22,7 @@ class VideoFormTestCase(TestCase):
             'https://www.youtube.com',
         ]
 
-        url_patterns_flexible_base = [
+        cls.url_patterns_flexible_base = [
             '{base}/watch?v={id}',
             '{base}/watch?v={id}&feature=channel',
             '{base}/watch?v={id}&playnext_from=TL&videos=osPknwzXEas&feature=sub',
@@ -37,14 +36,19 @@ class VideoFormTestCase(TestCase):
             '{base}/embed/{id}?rel=0',
         ]
 
-        url_patterns_specific = [
+        cls.url_patterns_specific = [
             'http://youtu.be/{id}',
             'http://youtu.be/{id}?feature=youtube_gdata_player',
 
             '//www.youtube-nocookie.com/embed/{id}?rel=0',
         ]
 
-        video_id = 'NbsRVfLCE1U'
+        cls.video_id = 'NbsRVfLCE1U'
+
+    def setUp(self):
+        self.form_data = {'template': 'default'}
+
+    def test_embed_link_validation(self):
         form_data = self.form_data
 
         def test_url(video_url):
@@ -53,20 +57,47 @@ class VideoFormTestCase(TestCase):
             self.assertTrue(form.is_valid())
             self.assertEqual(
                 form.cleaned_data['embed_link'],
-                YOUTUBE_EMBED_URL.format(video_id),
+                DEFAULT_YOUTUBE_EMBED_URL.format(self.video_id),
             )
 
-        for base_url in base_urls:
-            for url_pattern in url_patterns_flexible_base:
+        for base_url in self.base_urls:
+            for url_pattern in self.url_patterns_flexible_base:
                 url = url_pattern.format(
                     base=base_url,
-                    id=video_id
+                    id=self.video_id
                 )
                 test_url(url)
 
-        for url_pattern in url_patterns_specific:
+        for url_pattern in self.url_patterns_specific:
             url = url_pattern.format(
-                id=video_id
+                id=self.video_id
+            )
+            test_url(url)
+
+    @override_settings(DJANGOCMS_VIDEO_YOUTUBE_EMBED_URL=YOUTUBE_NOCOOKIE_EMBED_URL)
+    def test_alternative_youtube_link(self):
+        form_data = self.form_data
+
+        def test_url(video_url):
+            form_data['embed_link'] = video_url
+            form = VideoPlayerPluginForm(data=form_data)
+            self.assertTrue(form.is_valid())
+            self.assertEqual(
+                form.cleaned_data['embed_link'],
+                YOUTUBE_NOCOOKIE_EMBED_URL.format(self.video_id),
+            )
+
+        for base_url in self.base_urls:
+            for url_pattern in self.url_patterns_flexible_base:
+                url = url_pattern.format(
+                    base=base_url,
+                    id=self.video_id
+                )
+                test_url(url)
+
+        for url_pattern in self.url_patterns_specific:
+            url = url_pattern.format(
+                id=self.video_id
             )
             test_url(url)
 

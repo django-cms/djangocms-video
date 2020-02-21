@@ -3,6 +3,12 @@ Changelog
 =========
 
 
+2.x.x
+=====
+
+* Added setting DJANGOCMS_VIDEO_YOUTUBE_EMBED_URL to allow overriding the default canonical YouTube URL
+
+
 2.3.0 (2020-01-29)
 ==================
 
