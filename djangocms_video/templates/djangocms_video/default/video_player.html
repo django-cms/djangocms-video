@@ -1,23 +1,27 @@
-{% load i18n cms_tags %}
+{% load i18n cms_tags static %}
 
-{% if instance.embed_link %}
-    {# show iframe if embed_link is provided #}
-    <iframe src="{{ instance.embed_link_with_parameters }}" {{ instance.attributes_str }} frameborder="0" allowfullscreen="true"></iframe>
-    {% with disabled=instance.embed_link %}
-        {% for plugin in instance.child_plugin_instances %}
-            {% render_plugin plugin %}
-        {% endfor %}
-    {% endwith %}
-{% else %}
-    {# render <source> or <track> plugins #}
-    <video controls {{ instance.attributes_str }}
-        {% if instance.poster %} poster="{{ instance.poster.url }}"{% endif %}>
-        {% for plugin in instance.child_plugin_instances %}
-            {% render_plugin plugin %}
-        {% endfor %}
-        {% trans "Your browser doesn't support this video format." %}
-    </video>
-{% endif %}
+<link rel="stylesheet" type="text/css" href="{% static 'djangocms_video/video_player.css' %}"/>
+
+<div class="djangocms-video-plugin">
+    {% if instance.embed_link %}
+        {# show iframe if embed_link is provided #}
+        <iframe src="{{ instance.embed_link_with_parameters }}" {{ instance.attributes_str }} frameborder="0" allowfullscreen="true"></iframe>
+        {% with disabled=instance.embed_link %}
+            {% for plugin in instance.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
+        {% endwith %}
+    {% else %}
+        {# render <source> or <track> plugins #}
+        <video controls {{ instance.attributes_str }}
+            {% if instance.poster %} poster="{{ instance.poster.url }}"{% endif %}>
+            {% for plugin in instance.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
+            {% trans "Your browser doesn't support this video format." %}
+        </video>
+    {% endif %}
+</div>
 
 {% comment %}
     # Available variables:
