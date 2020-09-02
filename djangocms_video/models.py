@@ -1,25 +1,21 @@
-# -*- coding: utf-8 -*-
 """
 Enables the user to add a "Video player" plugin that can render content
 from external resources through an embed link or upload single files as
 sources to be displayed in an HTML5 player.
 """
-from __future__ import unicode_literals
-
 import sys
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.utils.translation import ugettext
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext
+from django.utils.translation import gettext_lazy as _
 
 from cms.models import CMSPlugin
 
 from djangocms_attributes_field.fields import AttributesField
 from filer.fields.file import FilerFileField
 from filer.fields.image import FilerImageField
-from six import python_2_unicode_compatible
 
 
 if sys.version_info.major < 3:  # pragma: no cover
@@ -50,7 +46,6 @@ def get_templates():
     )
 
 
-@python_2_unicode_compatible
 class VideoPlayer(CMSPlugin):
     """
     Renders either an Iframe when ``link`` is provided or the HTML5 <video> tag
@@ -130,7 +125,6 @@ class VideoPlayer(CMSPlugin):
         return urlunparse(url_parts)
 
 
-@python_2_unicode_compatible
 class VideoSource(CMSPlugin):
     """
     Renders the HTML <source> element inside of <video>.
@@ -164,14 +158,14 @@ class VideoSource(CMSPlugin):
     def clean(self):
         if self.source_file and self.source_file.extension not in get_extensions():
             raise ValidationError(
-                ugettext('Incorrect file type: {extension}.')
+                gettext('Incorrect file type: {extension}.')
                 .format(extension=self.source_file.extension)
             )
 
     def get_short_description(self):
         if self.source_file_id and self.source_file.label:
             return self.source_file.label
-        return ugettext('<file is missing>')
+        return gettext('<file is missing>')
 
     def copy_relations(self, oldinstance):
         # Because we have a ForeignKey, it's required to copy over
@@ -179,7 +173,6 @@ class VideoSource(CMSPlugin):
         self.source_file = oldinstance.source_file
 
 
-@python_2_unicode_compatible
 class VideoTrack(CMSPlugin):
     """
     Renders the HTML <track> element inside <video>.

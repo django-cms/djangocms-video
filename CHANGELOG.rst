@@ -3,10 +3,14 @@ Changelog
 =========
 
 
-2.x.x
-=====
+3.0.0 (unreleased)
+==================
 
-* Added setting DJANGOCMS_VIDEO_YOUTUBE_EMBED_URL to allow overriding the default canonical YouTube URL
+* Added support for Django 3.1
+* Dropped support for Python 2.7 and Python 3.4
+* Dropped support for Django < 2.2
+* Added setting DJANGOCMS_VIDEO_YOUTUBE_EMBED_URL to allow overriding the
+  default canonical YouTube URL
 
 
 2.3.0 (2020-01-29)
