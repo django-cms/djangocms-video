@@ -16,12 +16,7 @@ from cms.models import CMSPlugin
 from djangocms_attributes_field.fields import AttributesField
 from filer.fields.file import FilerFileField
 from filer.fields.image import FilerImageField
-
-
-if sys.version_info.major < 3:  # pragma: no cover
-    from urlencode import urllib
-else:
-    from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
+from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 
 # The mp4 file format is supported by all major browsers
