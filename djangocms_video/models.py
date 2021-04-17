@@ -3,6 +3,8 @@ Enables the user to add a "Video player" plugin that can render content
 from external resources through an embed link or upload single files as
 sources to be displayed in an HTML5 player.
 """
+from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
+
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
@@ -14,7 +16,6 @@ from cms.models import CMSPlugin
 from djangocms_attributes_field.fields import AttributesField
 from filer.fields.file import FilerFileField
 from filer.fields.image import FilerImageField
-from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 
 # The mp4 file format is supported by all major browsers
