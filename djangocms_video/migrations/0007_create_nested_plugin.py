@@ -3,7 +3,8 @@ from django.db import migrations, models
 
 def create_videosourceplugin(apps, schema_editor):
     from cms import api
-    from cms.models import Placeholder, CMSPlugin
+    from cms.models import CMSPlugin, Placeholder
+    
     from filer.models import File
 
     VideoPlayer = apps.get_model('djangocms_video', 'VideoPlayer')
