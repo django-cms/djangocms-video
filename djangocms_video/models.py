@@ -21,7 +21,7 @@ from filer.fields.image import FilerImageField
 if sys.version_info.major < 3:  # pragma: no cover
     from urlencode import urllib
 else:
-    from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
+    import parse_qsl, urlencode, urlparse, urlunparse
 
 
 # The mp4 file format is supported by all major browsers
