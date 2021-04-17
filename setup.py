@@ -8,6 +8,7 @@ REQUIREMENTS = [
     'django-cms>=3.7',
     'django-filer>=1.7',
     'djangocms-attributes-field>=1',
+    'django-treebeard>=4.3,<4.5',
 ]
 
 
