@@ -3,6 +3,12 @@ Changelog
 =========
 
 
+Unreleased
+==================
+
+* Removed (pinned) django-treebeard dependency
+
+
 3.0.0 (2020-09-02)
 ==================
 
