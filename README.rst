@@ -72,6 +72,8 @@ This addon provides a ``default`` template for all instances. You can provide
 additional template choices by adding a ``DJANGOCMS_VIDEO_TEMPLATES``
 setting::
 
+    from django.utils.translation import gettext_lazy as _
+
     DJANGOCMS_VIDEO_TEMPLATES = [
         ('feature', _('Featured Version')),
     ]
