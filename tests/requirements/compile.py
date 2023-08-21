@@ -28,8 +28,7 @@
 from __future__ import annotations
 
 import sys
-from os import chdir
-from os import environ
+from os import chdir, environ
 from pathlib import Path
 from subprocess import run
 

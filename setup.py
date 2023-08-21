@@ -3,7 +3,6 @@ from setuptools import find_packages, setup
 
 from djangocms_video import __version__
 
-
 REQUIREMENTS = [
     'django-cms>=3.7',
     'django-filer>=1.7',
