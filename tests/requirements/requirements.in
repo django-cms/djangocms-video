@@ -1,5 +1,5 @@
-isort
-django-app-helper
-tox
 coverage
-flake8
+django
+django-app-helper
+django-mptt
+tox
