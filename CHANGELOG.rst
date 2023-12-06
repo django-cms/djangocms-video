@@ -2,10 +2,11 @@
 Changelog
 =========
 
-3.1.0 (2022-12-06)
+3.1.0 (2022-12-07)
 ==================
 
-## What's Changed
+What's Changed
+--------------
 * Add GitHub Actions by @crydotsnake in https://github.com/django-cms/djangocms-video/pull/61
 * Add requirement files by @crydotsnake in https://github.com/django-cms/djangocms-video/pull/62
 * Plugin code block must be identifiable by CSS by @macolo in https://github.com/django-cms/djangocms-video/pull/64
@@ -13,7 +14,8 @@ Changelog
 * FEATURE: adjust setup metadata by @crydotsnake in https://github.com/django-cms/djangocms-video/pull/67
 * feat: Add migrations for Django 4.2 by @mogoh in https://github.com/django-cms/djangocms-video/pull/73
 
-## New Contributors
+New Contributors
+----------------
 * @crydotsnake made their first contribution in https://github.com/django-cms/djangocms-video/pull/61
 * @macolo made their first contribution in https://github.com/django-cms/djangocms-video/pull/64
 * @Kaushal-Dhungel made their first contribution in https://github.com/django-cms/djangocms-video/pull/65
