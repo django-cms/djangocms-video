@@ -1,7 +1,9 @@
 from django.test import TestCase, override_settings
 
 from djangocms_video.forms import (
-    DEFAULT_YOUTUBE_EMBED_URL, YOUTUBE_URL_RE, VideoPlayerPluginForm,
+    DEFAULT_YOUTUBE_EMBED_URL,
+    YOUTUBE_URL_RE,
+    VideoPlayerPluginForm,
 )
 
 YOUTUBE_NOCOOKIE_EMBED_URL = "//www.youtube-nocookie.com/embed/{}"

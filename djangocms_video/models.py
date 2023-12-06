@@ -5,14 +5,12 @@ sources to be displayed in an HTML5 player.
 """
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
+from cms.models import CMSPlugin
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext
 from django.utils.translation import gettext_lazy as _
-
-from cms.models import CMSPlugin
-
 from djangocms_attributes_field.fields import AttributesField
 from filer.fields.file import FilerFileField
 from filer.fields.image import FilerImageField

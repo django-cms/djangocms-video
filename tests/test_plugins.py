@@ -2,7 +2,9 @@ from cms.api import add_plugin, create_page
 from cms.test_utils.testcases import CMSTestCase
 
 from djangocms_video.cms_plugins import (
-    VideoPlayerPlugin, VideoSourcePlugin, VideoTrackPlugin,
+    VideoPlayerPlugin,
+    VideoSourcePlugin,
+    VideoTrackPlugin,
 )
 
 from .helpers import get_filer_file

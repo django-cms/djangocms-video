@@ -1,5 +1,0 @@
-isort
-django-app-helper
-tox
-coverage
-flake8
