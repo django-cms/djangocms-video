@@ -80,6 +80,23 @@ class VideoPlayer(CMSPlugin):
         verbose_name=_('Attributes'),
         blank=True,
     )
+    show_controls = models.BooleanField(
+        verbose_name=_('Show controls'),
+        default=True,
+        help_text=_(
+            'If enabled, the video will be shown with Play, Pause and Seek '
+            'elements that allow the user to control playback.'
+        ),
+    )
+    autoplay = models.BooleanField(
+        verbose_name=_('Autoplay'),
+        default=False,
+        help_text=_(
+            'If enabled, the video will automatically play once the page is '
+            'loaded. This might not work depending on how the user has '
+            'configured their browser.'
+        ),
+    )
 
     # Add an app namespace to related_name to avoid field name clashes
     # with any other plugins that have a field with the same name as the
@@ -162,6 +179,16 @@ class VideoSource(CMSPlugin):
         # Because we have a ForeignKey, it's required to copy over
         # the reference from the instance to the new plugin.
         self.source_file = oldinstance.source_file
+
+
+class HlsStreamSource(CMSPlugin):
+    """
+    Renders the HTML <source> element inside of <video> for an HLS stream defined by a .m3u8 URL.
+    """
+    hls_source_url = models.CharField(
+        verbose_name=_('HLS Source URL'),
+        max_length=1024,
+    )
 
 
 class VideoTrack(CMSPlugin):

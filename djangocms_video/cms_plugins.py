@@ -10,7 +10,7 @@ class VideoPlayerPlugin(CMSPluginBase):
     name = _('Video player')
     text_enabled = True
     allow_children = True
-    child_classes = ['VideoSourcePlugin', 'VideoTrackPlugin']
+    child_classes = ['VideoSourcePlugin', 'VideoTrackPlugin', 'HlsStreamSourcePlugin']
     form = forms.VideoPlayerPluginForm
 
     fieldsets = [
@@ -32,6 +32,8 @@ class VideoPlayerPlugin(CMSPluginBase):
             'fields': (
                 'poster',
                 'attributes',
+                'show_controls',
+                'autoplay',
             )
         })
     ]
@@ -39,6 +41,8 @@ class VideoPlayerPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
         context['video_template'] = instance.template
+        context['show_controls'] = instance.show_controls
+        context['autoplay'] = instance.autoplay
         return context
 
     def get_render_template(self, context, instance, placeholder):
@@ -72,6 +76,30 @@ class VideoSourcePlugin(CMSPluginBase):
         return 'djangocms_video/{}/source.html'.format(context.get('video_template', 'default'))
 
 
+class HlsStreamSourcePlugin(CMSPluginBase):
+    model = models.HlsStreamSource
+    name = _('HLS Stream Source')
+    module = _('Video player')
+    require_parent = True
+    parent_classes = ['VideoPlayerPlugin']
+
+    fieldsets = [
+        (None, {
+            'fields': (
+                'hls_source_url',
+            )
+        }),
+    ]
+
+    def render(self, context, instance, placeholder):
+        context = super().render(context, instance, placeholder)
+        context['source_id'] = instance.id
+        return context
+
+    def get_render_template(self, context, instance, placeholder):
+        return 'djangocms_video/{}/hls_stream_source.html'.format(context.get('video_template', 'default'))
+
+
 class VideoTrackPlugin(CMSPluginBase):
     model = models.VideoTrack
     name = _('Track')
@@ -101,5 +129,6 @@ class VideoTrackPlugin(CMSPluginBase):
 
 
 plugin_pool.register_plugin(VideoPlayerPlugin)
+plugin_pool.register_plugin(HlsStreamSourcePlugin)
 plugin_pool.register_plugin(VideoSourcePlugin)
 plugin_pool.register_plugin(VideoTrackPlugin)

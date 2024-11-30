@@ -12,8 +12,10 @@
         {% endwith %}
     {% else %}
         {# render <source> or <track> plugins #}
-        <video controls {{ instance.attributes_str }}
-            {% if instance.poster %} poster="{{ instance.poster.url }}"{% endif %}>
+        <video {% if show_controls %} controls {% endif %}
+               {% if autoplay %} autoplay {% endif %}
+               {{ instance.attributes_str }}
+               {% if instance.poster %} poster="{{ instance.poster.url }}"{% endif %}>
             {% for plugin in instance.child_plugin_instances %}
                 {% render_plugin plugin %}
             {% endfor %}
