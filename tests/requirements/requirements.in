@@ -1,5 +1,4 @@
 coverage
-django
+django-cms
 django-app-helper
-django-mptt
 tox
