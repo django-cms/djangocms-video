@@ -33,18 +33,14 @@ from pathlib import Path
 from subprocess import run
 
 CONFIG_MATRIX = [
-    ["python3.9", "Django>=3.2a1,<3.3", "django-cms>=3.8,<3.9", "py39-django32-cms38.txt",],
-    ["python3.9", "Django>=3.2a1,<3.3", "django-cms>=3.9,<3.10", "py39-django32-cms39.txt",],
-    ["python3.9", "Django>=3.2a1,<3.3", "django-cms>=3.10,<3.11", "py39-django32-cms310.txt",],
-
-    ["python3.10", "Django>=3.2a1,<3.3", "django-cms>=3.8,<3.9", "py310-django32-cms38.txt",],
-    ["python3.10", "Django>=3.2a1,<3.3", "django-cms>=3.9,<3.10", "py310-django32-cms39.txt",],
-    ["python3.10", "Django>=3.2a1,<3.3", "django-cms>=3.10,<3.11", "py310-django32-cms310.txt",],
+    ["python3.9", "Django>=4.2a1,<4.3", "django-cms>=3.11,<4.0", "py39-django42-cms311.txt",],
     ["python3.10", "Django>=4.2a1,<5.0", "django-cms>=3.11,<4.0", "py310-django42-cms311.txt",],
+    ["python3.11", "Django>=4.2a1,<5.0", "django-cms>=3.11,<4.0", "py311-django42-cms311.txt", ],
+    ["python3.12", "Django>=4.2a1,<5.0", "django-cms>=3.11,<4.0", "py312-django42-cms311.txt", ],
 
-    ["python3.11", "Django>=4.2a1,<5.0", "django-cms>=3.11,<4.0", "py311-django42-cms311.txt",],
-    ["python3.12", "Django>=4.2a1,<5.0", "django-cms>=3.11,<4.0", "py312-django42-cms311.txt",],
-    ["python3.13", "Django>=4.2a1,<5.0", "django-cms>=3.11,<4.0", "py313-django42-cms311.txt",],
+    ["python3.11", "Django>=5.0,<5.1", "django-cms>=3.11,<4.0", "py311-django50-cms311.txt",],
+    ["python3.12", "Django>=5.0,<5.1", "django-cms>=3.11,<4.0", "py312-django50-cms311.txt",],
+    ["python3.13", "Django>=5.0,<5.1", "django-cms>=3.11,<4.0", "py313-django50-cms311.txt",],
 ]
 
 if __name__ == "__main__":
