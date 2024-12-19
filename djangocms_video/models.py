@@ -185,9 +185,8 @@ class HlsStreamSource(CMSPlugin):
     """
     Renders the HTML <source> element inside of <video> for an HLS stream defined by a .m3u8 URL.
     """
-    hls_source_url = models.CharField(
-        verbose_name=_('HLS Source URL'),
-        max_length=1024,
+    hls_source_url = models.URLField(
+        verbose_name=_('HLS Source URL')
     )
 
 
