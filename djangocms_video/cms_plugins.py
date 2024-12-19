@@ -1,9 +1,11 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
 
 from . import forms, models
 
+DEFAULT_HLSJS_SOURCE = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js'
 
 class VideoPlayerPlugin(CMSPluginBase):
     model = models.VideoPlayer
@@ -94,6 +96,7 @@ class HlsStreamSourcePlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
         context['source_id'] = instance.id
+        context['hlsjs_source'] = getattr(settings, 'DJANGOCMS_VIDEO_HLSJS_SOURCE', DEFAULT_HLSJS_SOURCE)
         return context
 
     def get_render_template(self, context, instance, placeholder):

@@ -7,7 +7,7 @@
 {% endif %}
 
 {% addtoblock "js" %}
-<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js "></script>
+<script src="{{ hlsjs_source }}"></script>
 <script>
 // Find first source ending in a .m3u8 path and return its url
 function getHlsUrl(videoElement) {
