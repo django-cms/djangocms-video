@@ -97,6 +97,12 @@ The canonical URL can be reconfigured with a configuration setting::
 
     DJANGOCMS_VIDEO_YOUTUBE_EMBED_URL = '//www.youtube-nocookie.com/embed/{}'
 
+In addition to regular video files and YouTube videos, the plugin also supports `HLS <https://en.wikipedia.org/wiki/HTTP_Live_Streaming>`_ or HTTP Live Streams as source. These streams are played back using an html <video> element with the added support of `hls.js <https://hlsjs.video-dev.org>`_. An HLS source is defined by an URL pointing to a .m3u8 file served via HTTP.
+
+By default the HLS source includes the hls.js javascript file from a content delivery network. If you wish to override this, customize the following variable::
+
+   DJANGOCMS_VIDEO_HLSJS_SOURCE = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js'
+
 Running Tests
 -------------
 
