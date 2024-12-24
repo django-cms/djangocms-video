@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='HlsStreamSource',
             fields=[
                 ('cmsplugin_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, related_name='%(app_label)s_%(class)s', serialize=False, to='cms.cmsplugin')),
-                ('hls_source_url', models.CharField(max_length=1024, verbose_name='HLS Source URL')),
+                ('hls_source_url', models.URLField(verbose_name="HLS Source URL")),
             ],
             bases=('cms.cmsplugin',),
         ),

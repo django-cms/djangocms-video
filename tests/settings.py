@@ -3,7 +3,6 @@ HELPER_SETTINGS = {
     'INSTALLED_APPS': [
         'easy_thumbnails',
         'filer',
-        'mptt',
     ],
     'CMS_LANGUAGES': {
         1: [{
