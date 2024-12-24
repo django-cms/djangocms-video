@@ -82,25 +82,48 @@ dj-database-url==2.1.0 \
     --hash=sha256:04bc34b248d4c21aaa13e4ab419ae6575ef5f10f3df735ce7da97722caa356e0 \
     --hash=sha256:f2042cefe1086e539c9da39fad5ad7f61173bf79665e69bf7e4de55fa88b135f
     # via django-app-helper
-django==3.2.20 \
-    --hash=sha256:a477ab326ae7d8807dc25c186b951ab8c7648a3a23f9497763c37307a2b5ef87 \
-    --hash=sha256:dec2a116787b8e14962014bf78e120bba454135108e1af9e9b91ade7b2964c40
+django==3.2.25 \
+    --hash=sha256:7ca38a78654aee72378594d63e51636c04b8e28574f5505dff630895b5472777 \
+    --hash=sha256:a52ea7fcf280b16f7b739cec38fa6d3f8953a5456986944c3ca97e79882b4e38
     # via
     #   -r requirements.in
     #   dj-database-url
-    #   django-js-asset
+    #   django-classy-tags
+    #   django-cms
+    #   django-formtools
+    #   django-sekizai
+    #   django-treebeard
+    #   djangocms-admin-style
 django-app-helper==3.3.1 \
     --hash=sha256:6d5fdd0d247817aff4412d9854c434c577ae6aaa28198e3568e3e13bd749b3d1 \
     --hash=sha256:a2573fcdfe272b5978c52675fe75c40a9e518c4ff93efbd3940280093b25d378
     # via -r requirements.in
-django-js-asset==2.1.0 \
-    --hash=sha256:36a3a4dd6e9efc895fb127d13126020f6ec1ec9469ad42878d42143f22495d90 \
-    --hash=sha256:be6f69ae5c4865617aa7726c48eddb64089a1e7d4ea7d22a35a3beb8282020f6
-    # via django-mptt
-django-mptt==0.14.0 \
-    --hash=sha256:2c92a2b1614c53086278795ccf50580cf1f9b8564f3ff03055dd62bab5987711 \
-    --hash=sha256:d9a87433ab0e4f35247c6f6d5a93ace6990860a4ba8796f815d185f773b9acfc
+django-classy-tags==4.1.0 \
+    --hash=sha256:1c784cf1bac49c20a77b8f7d1541867c64076642a160a847ff449588d4e01e55 \
+    --hash=sha256:c8d9d1aa2fa6e71c4d866df4dd11d23a69b8d25bbb750b2490a17b161774ee59
+    # via
+    #   django-cms
+    #   django-sekizai
+django-cms==3.8.2 \
+    --hash=sha256:af80688c5e1a2a1151f122746482d7a40a43c2537c91220347e4272b1a5a627d \
+    --hash=sha256:b32a979a3ce9516a907cd9b481a3291f158e797c2b92c157561bcff2c43f36ae
     # via -r requirements.in
+django-formtools==2.5.1 \
+    --hash=sha256:47cb34552c6efca088863d693284d04fc36eaaf350eb21e1a1d935e0df523c93 \
+    --hash=sha256:bce9b64eda52cc1eef6961cc649cf75aacd1a707c2fff08d6c3efcbc8e7e761a
+    # via django-cms
+django-sekizai==4.1.0 \
+    --hash=sha256:2aca36cbae0b5c0cefed9565416ec442335767fb3145bff11e58622fc653cdad \
+    --hash=sha256:aa12e66ba0335fbe726b7d74cf4e8716b89a0be99a1304a9b9e8b191229e2e4a
+    # via django-cms
+django-treebeard==4.4 \
+    --hash=sha256:214ae3ab331a7de11fb055a2015c201e34f3fa14255b667e1e07752231a7a398 \
+    --hash=sha256:f50e4eea146f7af6702decf7ef198ac1eee1fb9bb4af2c5dba276c3c48f76623
+    # via django-cms
+djangocms-admin-style==3.3.1 \
+    --hash=sha256:9b76aafda245205e0a88d57efd5097a96c1a7fcb78d7f3efa50955eb980079de \
+    --hash=sha256:da20de3831f1a1a74de33fe12bbd3865a0027a982878c02aa1d102b1c799d767
+    # via django-cms
 docopt==0.6.2 \
     --hash=sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491
     # via django-app-helper
