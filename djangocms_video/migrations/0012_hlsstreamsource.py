@@ -7,7 +7,6 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cms', '0035_auto_20230822_2208_squashed_0036_auto_20240311_1028'),
         ('djangocms_video', '0011_alter_videoplayer_cmsplugin_ptr_and_more'),
     ]
 
