@@ -24,4 +24,4 @@ jobs:
           pip install ruff
       - name: Run Ruff
         run: |
-          ruff djangocms_video
+          ruff check djangocms_video
