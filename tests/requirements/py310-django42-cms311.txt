@@ -92,9 +92,9 @@ dj-database-url==2.3.0 \
     --hash=sha256:ae52e8e634186b57e5a45e445da5dc407a819c2ceed8a53d1fac004cc5288787 \
     --hash=sha256:bb0d414ba0ac5cd62773ec7f86f8cc378a9dbb00a80884c2fc08cc570452521e
     # via django-app-helper
-django==4.2.17 \
-    --hash=sha256:3a93350214ba25f178d4045c0786c61573e7dbfa3c509b3551374f1e11ba8de0 \
-    --hash=sha256:6b56d834cc94c8b21a8f4e775064896be3b4a4ca387f2612d4406a5927cd2fdc
+django==4.2.27 \
+    --hash=sha256:b865fbe0f4a3d1ee36594c5efa42b20db3c8bbb10dff0736face1c6e4bda5b92 \
+    --hash=sha256:f393a394053713e7d213984555c5b7d3caeee78b2ccb729888a0774dff6c11a8
     # via
     #   dj-database-url
     #   django-classy-tags
@@ -113,9 +113,9 @@ django-classy-tags==4.1.0 \
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.11.9 \
-    --hash=sha256:52908f55c401aacbdb033586b8b88a09862ded3e714650a0b8f89ee9ad6d8218 \
-    --hash=sha256:a383fb90159476da79d9e15f0b6701fbf85ec14eb1e7fe57ac8a1a60b55905c5
+django-cms==3.11.10 \
+    --hash=sha256:41fdf1f239c7eaca9283721a9df0198de5b44ef12082cb43f32726cfbb76ec84 \
+    --hash=sha256:868b19d7b74aef16bc05251934aaaf92e151590ecdfe1132989f32a28c42a95d
     # via -r requirements.in
 django-formtools==2.5.1 \
     --hash=sha256:47cb34552c6efca088863d693284d04fc36eaaf350eb21e1a1d935e0df523c93 \
