@@ -1,3 +1,62 @@
+[project]
+name = "djangocms-video"
+dynamic = ["version"]
+description = "Adds video plugin to django CMS."
+readme = "README.rst"
+license = {text = "BSD-3-Clause"}
+authors = [
+    {name = "Divio AG", email = "info@divio.com"},
+]
+maintainers = [
+    {name = "Django CMS Association and contributors", email = "info@django-cms.org"},
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Framework :: Django :: 5.2",
+    "Framework :: Django :: 6.0",
+    "Framework :: Django CMS",
+    "Framework :: Django CMS :: 3.11",
+    "Framework :: Django CMS :: 4.1",
+    "Framework :: Django CMS :: 5.0",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "django-cms>=3.11",
+    "django-filer>=2.2",
+    "djangocms-attributes-field>=1",
+]
+
+[tool.setuptools.packages.find]
+include = ["djangocms_video*"]
+
+[project.urls]
+repository = "https://github.com/django-cms/djangocms-video"
+
+[tool.setuptools.dynamic]
+version = {attr = "djangocms_video.__version__"}
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+
 [tool.ruff]
 exclude = [
     ".env",
