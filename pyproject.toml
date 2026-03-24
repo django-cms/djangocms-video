@@ -33,6 +33,7 @@ classifiers = [
     "Framework :: Django CMS :: 3.11",
     "Framework :: Django CMS :: 4.1",
     "Framework :: Django CMS :: 5.0",
+    "Framework :: Django CMS :: 5.1",
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     "Topic :: Software Development",
