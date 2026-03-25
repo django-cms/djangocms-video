@@ -1,0 +1,6 @@
+-r base.txt
+
+Django>=5.2,<6
+django-cms==5.1.0a1
+djangocms-versioning>=2.4
+django-treebeard<5
