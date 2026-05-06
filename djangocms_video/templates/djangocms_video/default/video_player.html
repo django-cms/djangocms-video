@@ -4,7 +4,7 @@
 <div class="djangocms-video-plugin">
     {% if instance.embed_link %}
         {# show iframe if embed_link is provided #}
-        <iframe src="{{ instance.embed_link_with_parameters }}" {{ instance.attributes_str }} frameborder="0" allowfullscreen="true"></iframe>
+        <iframe src="{{ instance.embed_link_with_parameters }}" {{ instance.attributes_str }} referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen="true"></iframe>
         {% with disabled=instance.embed_link %}
             {% for plugin in instance.child_plugin_instances %}
                 {% render_plugin plugin %}
