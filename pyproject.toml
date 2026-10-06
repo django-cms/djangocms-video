@@ -59,21 +59,22 @@ version = {attr = "djangocms_video.__version__"}
 DJANGO_SETTINGS_MODULE = "tests.settings"
 
 [tool.ruff]
-exclude = [
-    ".env",
-    ".venv",
-    "**/migrations/**",
+line-length = 119
+extend-exclude = [
+  "**/migrations/**",
+  ".env",
+]
+
+[tool.ruff.lint]
+select = [
+  "I",
+  "E",
+  "F",
+  "W",
 ]
 ignore = [
-    "E501",  # line too long
-    "F403",  # 'from module import *' used; unable to detect undefined names
-    "E701",  # multiple statements on one line (colon)
-    "F401",  # module imported but unused
-]
-line-length = 119
-select = [
-    "I",
-    "E",
-    "F",
-    "W",
+  "E501",  # line too long
+  "F403",  # 'from module import *' used; unable to detect undefined names
+  "E701",  # multiple statements on one line (colon)
+  "F401",  # module imported but unused
 ]
