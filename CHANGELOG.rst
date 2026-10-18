@@ -2,6 +2,12 @@
 Changelog
 =========
 
+Unreleased
+==========
+
+* Fixed Vimeo video links by converting them to player URLs while preserving
+  privacy hashes and playback parameters.
+
 3.1.0 (2022-12-07)
 ==================
 

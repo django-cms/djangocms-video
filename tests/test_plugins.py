@@ -6,6 +6,7 @@ from djangocms_video.cms_plugins import (
     VideoSourcePlugin,
     VideoTrackPlugin,
 )
+from djangocms_video.forms import VideoPlayerPluginForm
 
 from .fixtures import TestFixture
 from .helpers import get_filer_file
@@ -95,3 +96,28 @@ class VideoPlayerPluginsTestCase(TestFixture, CMSTestCase):
 
         self.assertIn(b"<track kind", response.content)
         self.assertContains(response, self.track_file.label)
+
+    def test_vimeo_player_rendering(self):
+        form = VideoPlayerPluginForm(
+            data={
+                "template": "default",
+                "embed_link": "https://vimeo.com/367756121/a75baf7391",
+            }
+        )
+        self.assertTrue(form.is_valid(), form.errors)
+        add_plugin(
+            placeholder=self.placeholder,
+            plugin_type=VideoPlayerPlugin.__name__,
+            language=self.language,
+            embed_link=form.cleaned_data["embed_link"],
+            parameters={"autoplay": "1"},
+        )
+        self.publish(self.page, self.language)
+
+        with self.login_user_context(self.superuser):
+            response = self.client.get(self.request_url)
+
+        self.assertContains(
+            response,
+            'src="https://player.vimeo.com/video/367756121?h=a75baf7391&amp;autoplay=1"',
+        )
