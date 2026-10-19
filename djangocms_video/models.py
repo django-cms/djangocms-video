@@ -108,8 +108,12 @@ class VideoPlayer(CMSPlugin):
         return self._append_url_parameters(self.embed_link, self.parameters)
 
     def _append_url_parameters(self, url, params):
-        url_parts = list(urlparse(url))
+        parsed_url = urlparse(url)
+        url_parts = list(parsed_url)
         query = dict(parse_qsl(url_parts[4]))
+        if parsed_url.hostname == "player.vimeo.com" and "h" in query:
+            # The privacy hash is required to access unlisted Vimeo videos.
+            params = dict(params, h=query["h"])
         query.update(params)
         url_parts[4] = urlencode(query)
         return urlunparse(url_parts)

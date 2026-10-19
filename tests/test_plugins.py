@@ -112,7 +112,7 @@ class VideoPlayerPluginsTestCase(TestFixture, CMSTestCase):
             plugin_type=VideoPlayerPlugin.__name__,
             language=self.language,
             embed_link=form.cleaned_data["embed_link"],
-            parameters={"autoplay": "1"},
+            parameters={"h": "old", "autoplay": "1"},
         )
         plugin.refresh_from_db()
         self.assertEqual(plugin.embed_link, expected)
