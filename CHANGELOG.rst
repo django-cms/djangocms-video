@@ -7,6 +7,7 @@ Unreleased
 
 * Fixed Vimeo video links by converting them to player URLs while preserving
   privacy hashes and playback parameters.
+* Removed the embed link length limit to allow saving converted video URLs.
 
 3.1.0 (2022-12-07)
 ==================

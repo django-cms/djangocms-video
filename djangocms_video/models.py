@@ -52,10 +52,9 @@ class VideoPlayer(CMSPlugin):
         blank=True,
         max_length=255,
     )
-    embed_link = models.CharField(
+    embed_link = models.TextField(
         verbose_name=_('Embed link'),
         blank=True,
-        max_length=255,
         help_text=_(
             'Use this field to embed videos from external services '
             'such as YouTube, Vimeo or others. Leave it blank to upload video '
@@ -206,5 +205,5 @@ class VideoTrack(CMSPlugin):
     def __str__(self):
         label = self.kind
         if self.srclang:
-            label += ' ({})'.format(self.srclang)
+            label += f' ({self.srclang})'
         return label

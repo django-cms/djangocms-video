@@ -22,6 +22,7 @@ class VideoPlayerPluginForm(forms.ModelForm):
     class Meta:
         model = models.VideoPlayer
         exclude = []
+        widgets = {"embed_link": forms.TextInput}
 
     def clean_embed_link(self):
         link = self.cleaned_data['embed_link']

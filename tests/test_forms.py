@@ -173,6 +173,29 @@ class VideoFormTestCase(TestCase):
                 self.assertTrue(form.is_valid(), form.errors)
                 self.assertEqual(form.cleaned_data["embed_link"], expected)
 
+    def test_long_vimeo_embed_link(self):
+        urls = [
+            (
+                "https://vimeo.com/367756121?tracking=" + "a" * 200 + "#t=10s",
+                "https://player.vimeo.com/video/367756121?tracking=" + "a" * 200 + "#t=10s",
+            ),
+            (
+                "https://vimeo.com/367756121/a75baf7391?tracking=" + "🌍" * 200 + "#t=10s",
+                "https://player.vimeo.com/video/367756121?h=a75baf7391&tracking=" + "%F0%9F%8C%8D" * 200 + "#t=10s",
+            ),
+        ]
+        for url, expected in urls:
+            with self.subTest(url=url):
+                self.assertLessEqual(len(url), 255)
+                self.assertGreater(len(expected), 255)
+                form = VideoPlayerPluginForm(data={**self.form_data, "embed_link": url})
+                self.assertTrue(form.is_valid(), form.errors)
+                self.assertEqual(form.cleaned_data["embed_link"], expected)
+
+                form = VideoPlayerPluginForm(data={**self.form_data, "embed_link": expected})
+                self.assertTrue(form.is_valid(), form.errors)
+                self.assertEqual(form.cleaned_data["embed_link"], expected)
+
     def test_other_embed_links_unchanged(self):
         urls = [
             "",
