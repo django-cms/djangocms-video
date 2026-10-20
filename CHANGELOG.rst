@@ -2,6 +2,16 @@
 Changelog
 =========
 
+Unreleased
+==========
+
+* Preserved Vimeo player URL privacy hashes when applying plugin parameters.
+* Fixed Vimeo video links by converting them to player URLs while preserving
+  privacy hashes and playback parameters. Conversion happens when saving the
+  plugin form. Existing plugins with regular Vimeo URLs remain unchanged until
+  resaved.
+* Removed the embed link length limit to allow saving converted video URLs.
+
 3.1.0 (2022-12-07)
 ==================
 
