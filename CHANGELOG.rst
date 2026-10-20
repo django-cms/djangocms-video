@@ -2,15 +2,28 @@
 Changelog
 =========
 
-Unreleased
-==========
+3.2.0 (2026-10-20)
+==================
 
-* Preserved Vimeo player URL privacy hashes when applying plugin parameters.
-* Fixed Vimeo video links by converting them to player URLs while preserving
+What's Changed
+--------------
+
+* feat: modernize test setup to match djangocms-frontend constraints by @vinitkumar in https://github.com/django-cms/djangocms-video/pull/93
+* feat: include 5.1 alpha in test matrix by @vinitkumar in https://github.com/django-cms/djangocms-video/pull/94
+* feat: Add referrer policy to iframe in video player template by @fsbraun in https://github.com/django-cms/djangocms-video/pull/96
+* fix: Fixed Vimeo video links by converting them to player URLs while preserving
   privacy hashes and playback parameters. Conversion happens when saving the
   plugin form. Existing plugins with regular Vimeo URLs remain unchanged until
-  resaved.
-* Removed the embed link length limit to allow saving converted video URLs.
+  resaved by @teddygood in https://github.com/django-cms/djangocms-video/pull/99
+* docs: clarify configuration and show published supported versions by @fsbraun in https://github.com/django-cms/djangocms-video/pull/100
+
+
+New Contributors
+----------------
+
+* @vinitkumar made their first contribution in https://github.com/django-cms/djangocms-video/pull/93
+* @teddygood made their first contribution in https://github.com/django-cms/djangocms-video/pull/99
+
 
 3.1.0 (2022-12-07)
 ==================
