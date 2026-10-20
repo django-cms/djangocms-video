@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.test import TestCase
 
 from djangocms_video.models import (
+    HlsStreamSource,
     VideoPlayer,
     VideoSource,
     VideoTrack,
@@ -65,6 +66,8 @@ class VideoModelsTestCase(TestCase):
         self.assertEqual(instance.embed_link, self.embed_link)
         self.assertEqual(instance.attributes, "{'data-type', 'video'}")
         self.assertEqual(instance.poster, self.picture)
+        self.assertTrue(instance.show_controls)
+        self.assertFalse(instance.autoplay)
         # old copy relation
         instance.copy_relations(instance)
         self.assertEqual(instance.embed_link, self.embed_link)
@@ -118,6 +121,21 @@ class VideoModelsTestCase(TestCase):
         # old copy relation
         instance.copy_relations(instance)
         self.assertEqual(instance.source_file, None)
+
+    def test_hls_stream_source_instance(self):
+        url = "https://example.com/live/playlist.m3u8?token=example"
+        instance = HlsStreamSource.objects.create(hls_source_url=url)
+        instance.refresh_from_db()
+        self.assertEqual(instance.hls_source_url, url)
+        instance.full_clean()
+
+    def test_hls_stream_source_url_validation(self):
+        for url in ("", "not a URL", "/live/playlist.m3u8"):
+            with self.subTest(url=url):
+                instance = HlsStreamSource(hls_source_url=url)
+                with self.assertRaises(ValidationError) as error:
+                    instance.clean_fields(exclude=["cmsplugin_ptr"])
+                self.assertIn("hls_source_url", error.exception.message_dict)
 
     def test_video_track_instance(self):
         VideoTrack.objects.create(

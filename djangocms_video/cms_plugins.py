@@ -7,6 +7,7 @@ from . import forms, models
 
 DEFAULT_HLSJS_SOURCE = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js'
 
+
 class VideoPlayerPlugin(CMSPluginBase):
     model = models.VideoPlayer
     name = _('Video player')
@@ -95,7 +96,7 @@ class HlsStreamSourcePlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
-        context['source_id'] = instance.id
+        context['source_id'] = instance.pk
         context['hlsjs_source'] = getattr(settings, 'DJANGOCMS_VIDEO_HLSJS_SOURCE', DEFAULT_HLSJS_SOURCE)
         return context
 

@@ -97,9 +97,23 @@ The canonical URL can be reconfigured with a configuration setting::
 
     DJANGOCMS_VIDEO_YOUTUBE_EMBED_URL = '//www.youtube-nocookie.com/embed/{}'
 
-In addition to regular video files and YouTube videos, the plugin also supports `HLS <https://en.wikipedia.org/wiki/HTTP_Live_Streaming>`_ or HTTP Live Streams as source. These streams are played back using an html <video> element with the added support of `hls.js <https://hlsjs.video-dev.org>`_. An HLS source is defined by an URL pointing to a .m3u8 file served via HTTP.
+HLS streams
+~~~~~~~~~~~
 
-By default the HLS source includes the hls.js javascript file from a content delivery network. If you wish to override this, customize the following variable::
+To play an HTTP Live Streaming (HLS) stream, add an **HLS Stream Source** child
+to a **Video player** plugin and enter the HTTP or HTTPS URL of its ``.m3u8``
+playlist. Leave the player's **Embed link** empty. The **Show controls** and
+**Autoplay** options are available in the player's advanced settings; browsers
+may block autoplay.
+
+Streams use the HTML ``<video>`` element with `hls.js <https://hlsjs.video-dev.org>`_
+or the browser's native HLS support. Ensure ``sekizai`` is in ``INSTALLED_APPS``,
+``sekizai.context_processors.sekizai`` is in the template context processors,
+and the page template loads ``sekizai_tags`` and includes
+``{% render_block "js" %}`` after the content.
+
+By default, hls.js is loaded from a CDN. To use a different URL or a locally
+hosted copy, override this setting::
 
    DJANGOCMS_VIDEO_HLSJS_SOURCE = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js'
 
@@ -110,8 +124,13 @@ You can run tests by executing::
 
     virtualenv env
     source env/bin/activate
-    pip install -r tests/requirements.txt
-    python setup.py test
+    pip install -r tests/requirements/dj52_cms50.txt
+    python -m pytest
+
+The HLS playback script tests use Node.js (18 or later) without additional
+packages::
+
+    node --test tests/test_hls_stream_source.js
 
 
 .. |pypi| image:: https://badge.fury.io/py/djangocms-video.svg
