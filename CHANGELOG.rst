@@ -8,6 +8,7 @@ Changelog
 What's Changed
 --------------
 
+* feat: Implemented HLS stream source as new plugin type
 * feat: modernize test setup to match djangocms-frontend constraints by @vinitkumar in https://github.com/django-cms/djangocms-video/pull/93
 * feat: include 5.1 alpha in test matrix by @vinitkumar in https://github.com/django-cms/djangocms-video/pull/94
 * feat: Add referrer policy to iframe in video player template by @fsbraun in https://github.com/django-cms/djangocms-video/pull/96
