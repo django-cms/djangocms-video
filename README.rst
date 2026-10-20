@@ -46,6 +46,8 @@ file for additional dependencies:
 
 |python| |django| |djangocms|
 
+These badges show the supported versions declared by the latest release on PyPI.
+
 * Django Filer 1.7 or higher
 
 Make sure `django-filer <http://django-filer.readthedocs.io/en/latest/installation.html>`_
@@ -170,9 +172,12 @@ You can run tests by executing::
 .. |coverage| image:: https://codecov.io/gh/divio/djangocms-video/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/divio/djangocms-video
 
-.. |python| image:: https://img.shields.io/badge/python-3.5+-blue.svg
+.. |python| image:: https://img.shields.io/pypi/pyversions/djangocms-video
     :target: https://pypi.org/project/djangocms-video/
-.. |django| image:: https://img.shields.io/badge/django-2.2,%203.0,%203.1-blue.svg
-    :target: https://www.djangoproject.com/
-.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.7%2B-blue.svg
-    :target: https://www.django-cms.org/
+    :alt: Supported Python versions
+.. |django| image:: https://img.shields.io/pypi/frameworkversions/django/djangocms-video
+    :target: https://pypi.org/project/djangocms-video/
+    :alt: Supported Django versions
+.. |djangocms| image:: https://img.shields.io/pypi/frameworkversions/django-cms/djangocms-video
+    :target: https://pypi.org/project/djangocms-video/
+    :alt: Supported django CMS versions
