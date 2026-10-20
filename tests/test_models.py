@@ -1,3 +1,5 @@
+from urllib.parse import parse_qs, urlparse
+
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.test import TestCase
@@ -88,6 +90,48 @@ class VideoModelsTestCase(TestCase):
         instance.parameters = {"autoplay": "true"}
         self.assertIn("v=-wVD1eIrQoQs", instance.embed_link_with_parameters)
         self.assertIn("autoplay=true", instance.embed_link_with_parameters)
+
+    def test_vimeo_privacy_hash(self):
+        for base in ("https://player.vimeo.com", "//player.vimeo.com", "https://PLAYER.VIMEO.COM:443"):
+            with self.subTest(base=base):
+                url = f"{base}/video/367756121?h=a75baf7391&autoplay=0#t=10s"
+                instance = VideoPlayer(
+                    embed_link=url,
+                    parameters={"h": "old", "autoplay": "1"},
+                )
+                self.assertEqual(
+                    instance.embed_link_with_parameters,
+                    f"{base}/video/367756121?h=a75baf7391&autoplay=1#t=10s",
+                )
+                self.assertEqual(instance.embed_link, url)
+                self.assertEqual(instance.parameters, {"h": "old", "autoplay": "1"})
+
+    def test_vimeo_parameter_pairs(self):
+        instance = VideoPlayer(
+            embed_link="https://player.vimeo.com/video/367756121?h=a75baf7391",
+            parameters=[["h", "old"], ["autoplay", "1"]],
+        )
+        self.assertEqual(
+            instance.embed_link_with_parameters,
+            "https://player.vimeo.com/video/367756121?h=a75baf7391&autoplay=1",
+        )
+        self.assertEqual(instance.parameters, [["h", "old"], ["autoplay", "1"]])
+
+    def test_video_parameter_overrides(self):
+        urls = [
+            "https://player.vimeo.com/video/367756121?autoplay=0",
+            "https://player.vimeo.com/video/367756121?h=&autoplay=0",
+            "https://www.youtube.com/embed/-wVD1eIrQoQs?h=original&autoplay=0",
+            "https://player.vimeo.com.example.com/video/367756121?h=original&autoplay=0",
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                instance = VideoPlayer(
+                    embed_link=url,
+                    parameters={"h": "configured", "autoplay": "1"},
+                )
+                query = parse_qs(urlparse(instance.embed_link_with_parameters).query)
+                self.assertEqual(query, {"h": ["configured"], "autoplay": ["1"]})
 
     def test_video_source_instance(self):
         VideoSource.objects.create(

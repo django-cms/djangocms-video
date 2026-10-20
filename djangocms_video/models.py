@@ -52,10 +52,9 @@ class VideoPlayer(CMSPlugin):
         blank=True,
         max_length=255,
     )
-    embed_link = models.CharField(
+    embed_link = models.TextField(
         verbose_name=_('Embed link'),
         blank=True,
-        max_length=255,
         help_text=_(
             'Use this field to embed videos from external services '
             'such as YouTube, Vimeo or others. Leave it blank to upload video '
@@ -109,8 +108,12 @@ class VideoPlayer(CMSPlugin):
         return self._append_url_parameters(self.embed_link, self.parameters)
 
     def _append_url_parameters(self, url, params):
-        url_parts = list(urlparse(url))
+        parsed_url = urlparse(url)
+        url_parts = list(parsed_url)
         query = dict(parse_qsl(url_parts[4]))
+        if parsed_url.hostname == "player.vimeo.com" and "h" in query:
+            # The privacy hash is required to access unlisted Vimeo videos.
+            params = dict(params, h=query["h"])
         query.update(params)
         url_parts[4] = urlencode(query)
         return urlunparse(url_parts)
@@ -206,5 +209,5 @@ class VideoTrack(CMSPlugin):
     def __str__(self):
         label = self.kind
         if self.srclang:
-            label += ' ({})'.format(self.srclang)
+            label += f' ({self.srclang})'
         return label

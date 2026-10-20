@@ -117,3 +117,103 @@ class VideoFormTestCase(TestCase):
         form = VideoPlayerPluginForm(data=form_data)
         self.assertTrue(form.is_valid())
         self.assertIsNone(YOUTUBE_URL_RE.match(form.cleaned_data['embed_link']))
+
+    def test_vimeo_embed_link_validation(self):
+        for base in ("http://", "https://", "//", ""):
+            for host in ("vimeo.com", "www.vimeo.com"):
+                for suffix in ("", "/"):
+                    url = f"{base}{host}/367756121{suffix}"
+                    with self.subTest(url=url):
+                        form = VideoPlayerPluginForm(data={**self.form_data, "embed_link": url})
+                        self.assertTrue(form.is_valid(), form.errors)
+                        self.assertEqual(
+                            form.cleaned_data["embed_link"],
+                            "https://player.vimeo.com/video/367756121",
+                        )
+
+    def test_vimeo_embed_link_parameters(self):
+        urls = [
+            (
+                "https://vimeo.com/367756121?h=a75baf7391&autoplay=1#t=10s",
+                "https://player.vimeo.com/video/367756121?h=a75baf7391&autoplay=1#t=10s",
+            ),
+            (
+                "https://vimeo.com/367756121?autoplay=1&loop=1",
+                "https://player.vimeo.com/video/367756121?autoplay=1&loop=1",
+            ),
+            (
+                "https://vimeo.com/367756121#t=10s",
+                "https://player.vimeo.com/video/367756121#t=10s",
+            ),
+        ]
+        for url, expected in urls:
+            with self.subTest(url=url):
+                form = VideoPlayerPluginForm(data={**self.form_data, "embed_link": url})
+                self.assertTrue(form.is_valid(), form.errors)
+                self.assertEqual(form.cleaned_data["embed_link"], expected)
+
+    def test_unlisted_vimeo_embed_link(self):
+        urls = [
+            (
+                "https://vimeo.com/367756121/a75baf7391",
+                "https://player.vimeo.com/video/367756121?h=a75baf7391",
+            ),
+            (
+                "https://vimeo.com/367756121/a75baf7391/?autoplay=1#t=10s",
+                "https://player.vimeo.com/video/367756121?h=a75baf7391&autoplay=1#t=10s",
+            ),
+            (
+                "https://vimeo.com/367756121/a75baf7391?h=old&autoplay=1",
+                "https://player.vimeo.com/video/367756121?h=a75baf7391&autoplay=1",
+            ),
+        ]
+        for url, expected in urls:
+            with self.subTest(url=url):
+                form = VideoPlayerPluginForm(data={**self.form_data, "embed_link": url})
+                self.assertTrue(form.is_valid(), form.errors)
+                self.assertEqual(form.cleaned_data["embed_link"], expected)
+
+    def test_long_vimeo_embed_link(self):
+        urls = [
+            (
+                "https://vimeo.com/367756121?tracking=" + "a" * 200 + "#t=10s",
+                "https://player.vimeo.com/video/367756121?tracking=" + "a" * 200 + "#t=10s",
+            ),
+            (
+                "https://vimeo.com/367756121/a75baf7391?tracking=" + "🌍" * 200 + "#t=10s",
+                "https://player.vimeo.com/video/367756121?h=a75baf7391&tracking=" + "%F0%9F%8C%8D" * 200 + "#t=10s",
+            ),
+        ]
+        for url, expected in urls:
+            with self.subTest(url=url):
+                self.assertLessEqual(len(url), 255)
+                self.assertGreater(len(expected), 255)
+                form = VideoPlayerPluginForm(data={**self.form_data, "embed_link": url})
+                self.assertTrue(form.is_valid(), form.errors)
+                self.assertEqual(form.cleaned_data["embed_link"], expected)
+
+                form = VideoPlayerPluginForm(data={**self.form_data, "embed_link": expected})
+                self.assertTrue(form.is_valid(), form.errors)
+                self.assertEqual(form.cleaned_data["embed_link"], expected)
+
+    def test_other_embed_links_unchanged(self):
+        urls = [
+            "",
+            "https://player.vimeo.com/video/367756121?h=a75baf7391&autoplay=1#t=10s",
+            "//player.vimeo.com/video/367756121?h=a75baf7391",
+            "https://example.com/video/367756121",
+            "https://vimeo.com",
+            "https://vimeo.com/",
+            "https://vimeo.com/channels/staffpicks",
+            "https://vimeo.com/367756121/edit",
+            "https://vimeo.com/367756121/invalid/path",
+            "https://vimeo.com/367756121not-a-video",
+            "https://vimeo.com.example.com/367756121",
+            "https://example.com/vimeo.com/367756121",
+            "https://vimeo.com@other.example/367756121",
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                form = VideoPlayerPluginForm(data={**self.form_data, "embed_link": url})
+                self.assertTrue(form.is_valid(), form.errors)
+                self.assertEqual(form.cleaned_data["embed_link"], url)
