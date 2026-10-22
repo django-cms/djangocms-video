@@ -80,5 +80,7 @@ jobs:
     - name: Run coverage
       run: |
         coverage run -m pytest
+    - name: Test HLS playback script
+      run: node --test tests/test_hls_stream_source.js
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v6

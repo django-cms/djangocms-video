@@ -1,0 +1,53 @@
+{% load i18n cms_tags sekizai_tags %}
+
+{% if not disabled %}
+    {% with instance.hls_source_url as url %}
+        <source id="{{ source_id }}" src="{{ url }}" type="application/x-mpegURL">
+    {% endwith %}
+
+{% addtoblock "js" %}
+<script src="{{ hlsjs_source }}"></script>
+{% endaddtoblock %}
+{% addtoblock "js" %}
+<script>
+function attachHlsStream(sourceElement) {
+  const video = sourceElement.parentElement;
+  const hlsUrl = sourceElement.src;
+  if (Hls.isSupported()) {
+    let hls = new Hls();
+    hls.loadSource(hlsUrl);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+      if (video.autoplay) {
+        video.play().catch(() => {});
+      }
+    });
+
+    hls.on(Hls.Events.ERROR, function (event, data) {
+      if (data.fatal) {
+        switch (data.type) {
+        case Hls.ErrorTypes.MEDIA_ERROR:
+          console.error('fatal media error encountered, try to recover');
+          hls.recoverMediaError();
+          break;
+        case Hls.ErrorTypes.NETWORK_ERROR:
+          console.error('fatal network error encountered', data);
+          break;
+        default:
+          hls.destroy();
+          break;
+        }
+      }
+    });
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = hlsUrl;
+  } else {
+    console.error('HLS is not supported on this browser.');
+  }
+}
+
+attachHlsStream(document.getElementById('{{ source_id }}'));
+
+</script>
+{% endaddtoblock %}
+{% endif %}

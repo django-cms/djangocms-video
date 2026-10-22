@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     "filer",
     "cms",
     "menus",
+    "sekizai",
     "treebeard",
     "djangocms_video",
 ]
@@ -58,6 +59,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "sekizai.context_processors.sekizai",
             ],
         },
     },
